@@ -1,0 +1,43 @@
+.body{
+    position: relative;
+    width: 375px;
+    height: 667px;
+    background: #2980B9;
+}
+
+.arrow-left{
+    position: absolute;
+width: 41px;
+height: 51px;
+left: 19px;
+top: 20px;
+
+font-family: Font Awesome 5 Free;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 41px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+
+.bars{
+    position: absolute;
+width: 39px;
+height: 25px;
+left: 315px;
+top: 34px;
+
+font-family: Font Awesome 5 Free;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 41px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+}
