@@ -5,39 +5,164 @@
     background: #2980B9;
 }
 
-.arrow-left{
-    position: absolute;
-width: 41px;
-height: 51px;
-left: 19px;
-top: 20px;
-
-font-family: Font Awesome 5 Free;
-font-style: normal;
-font-weight: 900;
-font-size: 36px;
-line-height: 41px;
-display: flex;
-align-items: center;
-
-color: #FFFFFF;
+.center-white{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;    
+    color: #FFFFFF;
+    margin-bottom: 2%;
+    padding: 2%;
+    padding-left: 5%;
 }
 
-.bars{
-    position: absolute;
-width: 39px;
-height: 25px;
-left: 315px;
-top: 34px;
+.exit{    
+    width: 165px;
+    height: 37px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;       
+}
 
-font-family: Font Awesome 5 Free;
+.signout{
+width: 50px;
+height: 36px;
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 28px;
+}
+
+.save{    
+    width: 165px;
+height: 37px;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+}
+
+.bookmark{    
+width: 50px;
+height: 36px;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+}
+
+.stats{   
+width: 165px;
+height: 37px;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+}
+
+.chart{    
+width: 50px;
+height: 36px;
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 28px;
+}
+
+.bg{    
+width: 278px;
+height: 54px;
+background: #2C3E50;
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 15px;
+margin: 5%;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.okulSinif{  
+width: 110px;
+height: 36px;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+}
+
+.sinif{
+    width: 110px;
+height: 36px;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+}
+
+.name{    
+    width: 304px;
+    height: 55px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;   
+}
+
+.pen{    
+width: 30px;
+height: 28px;
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 28px;
+}
+
+.camera{    
+width: 35px;
+height: 34px;
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 28px;
+
+}
+
+.user{    
+width: 100%;
+height: 173px;
+font-style: normal;
+font-weight: normal;
+font-size: 96px;
+line-height: 110px;
+}
+
+.circle{    
+width: 188px;
+height: 188px;
+background: #34495E;
+border: 1px solid #FFFFFF;
+border-radius: 50%;
+box-sizing: border-box;
+}
+.arrow-left{    
+width: 41px;
+height: 51px;
 font-style: normal;
 font-weight: 900;
 font-size: 36px;
 line-height: 41px;
-display: flex;
-align-items: center;
-text-align: center;
+padding-left: 5%;
+}
 
-color: #FFFFFF;
+.bars{    
+width: 39px;
+height: 25px;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 41px;
+padding-right: 5%;
 }
