@@ -1,0 +1,71 @@
+.Frame{
+    position: relative;
+    width: 375px;
+    height: 667px;
+    
+    background: #2980B9;
+
+}
+
+
+
+
+
+
+
+.SifreDegistirFrame{
+    position: absolute;
+width: 100%;
+height: 47px;
+left: 0px;
+top: 0px;
+background: #34495E;
+}
+
+.SifreDegistirIcon{
+    
+
+width: 48px;
+height: 48px;
+font-size: 24px;
+line-height: 48px;
+align-items: center;
+text-align: left;
+padding-left: 16px;
+color: #222F3E;
+}
+
+.SifreDegistirArrow{
+
+
+
+width: 48px;
+height: 48px;
+font-size: 24px;
+line-height: 48px;
+align-items: center;
+float: right;
+padding-right: 16px;
+color: #7F8C8D;
+
+}
+
+.SifreDegistirTitle{
+
+
+width: 48px;
+height: 48px;
+left: 83px;
+top: 63px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+text-align: center;
+align-items: center;
+
+color: #FFFFFF;
+
+}
