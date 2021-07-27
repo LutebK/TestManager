@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RootPage } from 'src/app/modules/website/pages/root/root.page';
 import { LessonsPage } from './pages/lessons/lessons.page';
+import { TopicPage } from './pages/lessons/topic/topic.page';
 import { MainMenuPage } from './pages/main-menu/main-menu.page';
 import { MainPage } from './pages/main/main.page';
 import { OptionsPage } from './pages/options/options.page';
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'dersler', component: LessonsPage },
       { path: 'ayarlar', component: OptionsPage },
       { path: 'eğitim', component: OptionsEducationPage },
+      {path: 'konular', component:TopicPage},
       { path: '', component: MainPage }   
     ]}
     ];
