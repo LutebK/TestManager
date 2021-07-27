@@ -7,65 +7,59 @@
 
 }
 
-
-
-
-
-
-
-.SifreDegistirFrame{
-    position: absolute;
-width: 100%;
-height: 47px;
-left: 0px;
-top: 0px;
-background: #34495E;
+.FrameFunc{
+    width: 100%;
+    height: 48px;
+    background: #34495E;
 }
 
-.SifreDegistirIcon{
-    
+.boslukFunc{
+    width: 100%;
+    height: 8px;
+    background: #475A6D;
+}
 
-width: 48px;
-height: 48px;
-font-size: 24px;
-line-height: 48px;
-align-items: center;
+.positionFunc{
+    width: 48px;
+    height: 48px;
+    align-items: center;
+}
+
+.iconOptions{
+    font-size: 24px;
+    line-height: 48px;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.titleOptions{
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+.SifreDegistirIcon{
+
 text-align: left;
 padding-left: 16px;
 color: #222F3E;
 }
 
-.SifreDegistirArrow{
+.arrowOptions{
 
-
-
-width: 48px;
-height: 48px;
-font-size: 24px;
-line-height: 48px;
-align-items: center;
 float: right;
 padding-right: 16px;
 color: #7F8C8D;
 
 }
 
-.SifreDegistirTitle{
-
-
-width: 48px;
-height: 48px;
-left: 83px;
-top: 63px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-text-align: center;
-align-items: center;
-
-color: #FFFFFF;
-
+.premiumUyelikIcon{
+    
+    color: #F1C40F;
 }
