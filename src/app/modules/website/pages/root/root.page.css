@@ -10,3 +10,9 @@
     color: #DAF4C5;
     
 }
+.userImg{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: gray;
+}

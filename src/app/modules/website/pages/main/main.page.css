@@ -14,6 +14,22 @@
     text-align: center;
 
   }
+  
 .carousel slide{
     width: 100%;
   }
+  
+.col-6, .col-6 button{
+    height: 130px;    
+    padding: 0;
+    
+}
+i{
+    margin-top: 10px;
+    font-size: 48px;
+    width: 60px;
+    height: 55px;
+}
+p{
+    margin-bottom: 10px;
+}

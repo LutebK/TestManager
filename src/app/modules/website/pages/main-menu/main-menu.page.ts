@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'website-main-menu',
   templateUrl: './main-menu.page.html',
@@ -12,4 +13,5 @@ export class MainMenuPage implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }

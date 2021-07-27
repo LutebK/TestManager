@@ -1,20 +1,41 @@
 <div class="container-fluid">
+    <div *ngIf="mainMenuPath">
+        <header class="row" style="height: 48px;">
+            <div class="col-12 headerow" style=" margin-left: -12px; ">
 
-    <header class="row" style="height: 48px;">
-        <div class="col-12 headerow" style=" margin-left: -12px; ">
+                <button class="navbtn"
+                    style="height: 48px; text-align: center; border: none; position: absolute; width: 48px; font-size: 28px; "
+                    (click)="setPath()">
+                    <a [routerLink]="['/website']"><i class="fas fa-bars"></i></a>
+                </button>
+                <div style="text-align: center; color: white; margin-right: -24px;">
+                    <span style="line-height: 48px;  display: inline-block; width: 100%;">Uygulama İsmi</span>
+                </div>
 
-            <button class="navbtn" style="height: 48px; text-align: center; border: none; position: absolute; width: 48px; font-size: 28px; ">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div style="text-align: center; color: white; margin-right: -24px;">
-                <span style="line-height: 48px;  display: inline-block; width: 100%;">Uygulama İsmi</span>
+
             </div>
-           
+        </header>
+    </div>
+    <div *ngIf="mainMenuPath2"  class="nav">
 
+        <div class="row">
+            <div class="col-12">
+                <div class="userImg">
+
+                </div>
+                <div>
+                    <span>Uygulama İsmi</span>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <section class="row">
+        <button (click)="setPath()" >
+            aç beni
+        </button>
+
+
+    </div>
+    <section class="row" id="projectsection">
         <div class="col-12">
             <router-outlet></router-outlet>
         </div>

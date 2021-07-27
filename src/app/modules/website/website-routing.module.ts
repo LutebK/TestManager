@@ -10,7 +10,7 @@ import { ProfilePage } from './pages/profile/profile.page';
 const routes: Routes = [
   {
     path: '', component: RootPage, children: [      
-      { path: 'anamenu', component: MainMenuPage },
+      { path: 'acilirmenu', component: MainMenuPage },
       { path: 'profil', component: ProfilePage },
       { path: 'dersler', component: LessonsPage },
       { path: 'ayarlar', component: OptionsPage },
