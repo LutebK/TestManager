@@ -9,7 +9,7 @@ export class LessonsPage implements OnInit {
 
   list:lessons[] = [
     {
-      icon: "fas fa-pencil-alt", title:"TÜRKÇE", arrow: true, url:"",iconColor:"#CF6503",
+      icon: "fas fa-pencil-alt", title:"TÜRKÇE", arrow: true, url:"./konular",iconColor:"#CF6503",
     },
     {
       icon: "fas fa-square-root-alt", title:"MATEMATİK", arrow: true, url:"",iconColor:"#9296EF",

@@ -2,6 +2,7 @@
 
     <div class="col-12" style="padding: 0px; background-color: #475A6D;">
 
+        <!-- <a href=""></a> -->
         <div *ngFor="let button of list" [routerLink]="button.url"
             style="width: 100%; height: 48px; margin-bottom: 8px; background-color: #34495E; ">
             <div
@@ -13,8 +14,8 @@
                 <p class="titleLessons">{{button.title}}</p>
             </div>
             <div
-                style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 30px;">
-                <i *ngIf="button.arrow" class="fas fa-chevron-right arrowOptions positionFunc iconOptions"></i>
+                style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
+                <i *ngIf="button.arrow" class="fas fa-chevron-right arrowOptions positionFunc iconOptions downl"></i>
             </div>
         </div>
     </div>
