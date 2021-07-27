@@ -2,7 +2,6 @@
 
     <div class="col-12" style="padding: 0px; background-color: #475A6D;">
 
-        <!-- <a href=""></a> -->
         <div *ngFor="let button of list" [routerLink]="button.url"
             style="width: 100%; height: 48px; margin-bottom: 8px; background-color: #34495E; ">
             <div
@@ -11,11 +10,11 @@
             </div>
             <div
                 style="line-height: 48px; height: 48px; text-align: center; display: inline-block; font-size: 12px; width: calc(100% - 96px);">
-                <p class="titleLessons">{{button.title}}</p>
+                <p class="titleTopic">{{button.title}}</p>
             </div>
             <div
                 style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
-                <i *ngIf="button.arrow" class="fas fa-chevron-right arrowOptions positionFunc iconOptions downl"></i>
+                <i *ngIf="button.arrow" class="fas fa-chevron-down arrowOptions positionFunc iconOptions downc"></i>
             </div>
         </div>
     </div>

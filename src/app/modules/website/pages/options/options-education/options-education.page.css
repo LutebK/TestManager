@@ -1,36 +1,4 @@
-.Frame{
-    position: relative;
-    width: 375px;
-    height: 667px;
-    
-    background: #2980B9;
 
-}
-
-.FrameFunc{
-    width: 100%;
-    height: 48px;
-    background: #34495E;
-}
-
-.boslukFunc{
-    width: 100%;
-    height: 8px;
-    background: #475A6D;
-}
-
-.positionFunc{
-    width: 48px;
-    height: 48px;
-    align-items: center;
-}
-
-.iconOptions{
-    font-size: 24px;
-    line-height: 48px;
-    text-align: left;
-    padding-left: 16px;
-}
 
 .titleOptions{
 
