@@ -14,6 +14,7 @@ import { OptionsHelpPage } from './pages/options/options-help/options-help.page'
 import { OptionsChangepassPage } from './pages/options/options-changepass/options-changepass.page';
 import { OptionsInvitePage } from './pages/options/options-invite/options-invite.page';
 import { OptionsPremiumPage } from './pages/options/options-premium/options-premium.page';
+import { TopicPage } from './pages/lessons/topic/topic.page';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { OptionsPremiumPage } from './pages/options/options-premium/options-prem
     OptionsHelpPage,
     OptionsChangepassPage,
     OptionsInvitePage,
-    OptionsPremiumPage
+    OptionsPremiumPage,
+    TopicPage
   ],
   imports: [
     CommonModule,
