@@ -1,0 +1,27 @@
+.Frame{
+    position: relative;
+    width: 375px;
+    height: 667px;
+    
+    background: #2980B9;
+
+}
+
+.iconOptions{
+    font-size: 24px;
+    line-height: 48px;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.titleOptions{
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 10px;
+}

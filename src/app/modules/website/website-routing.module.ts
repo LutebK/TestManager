@@ -6,6 +6,7 @@ import { MainMenuPage } from './pages/main-menu/main-menu.page';
 import { MainPage } from './pages/main/main.page';
 import { OptionsPage } from './pages/options/options.page';
 import { ProfilePage } from './pages/profile/profile.page';
+import { OptionsEducationPage } from './pages/options/options-education/options-education.page';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'profil', component: ProfilePage },
       { path: 'dersler', component: LessonsPage },
       { path: 'ayarlar', component: OptionsPage },
+      { path: 'eğitim', component: OptionsEducationPage },
       { path: '', component: MainPage }   
     ]}
     ];
