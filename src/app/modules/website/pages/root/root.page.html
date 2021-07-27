@@ -1,26 +1,23 @@
-<div class="container-fluid" style="padding-right: 0; padding-left: 0;">
+<div class="container-fluid">
 
-<header class="row" style="height: 40px;">
-    <div class="col-12 headerow">
-        <div class="row">
-        <div class="col-1 " style="text-align: left;">
-            <button class="navbtn" style="height: 45px; font-size: 28px;">
+    <header class="row" style="height: 48px;">
+        <div class="col-12 headerow">
+
+            <button class="navbtn" style="height: 48px; text-align: center; border: none; position: absolute; width: 48px; font-size: 28px; ">
                 <i class="fas fa-bars"></i>
             </button>
-        </div>
-        <div class="col-11" style="color: #DAF4C5; text-align: center; position: relative; left: calc(50% - 92px); align-items: center;  display: flex;">
-            <span>Uygulama İsmi</span>
-        </div>
-    </div>
-    </div>
-</header>
+            <div style="text-align: center; color: white;">
+                <span style="line-height: 48px;  display: inline-block; width: calc(100%);">Uygulama İsmi</span>
+            </div>
+           
 
-<section class="row" style="background-color:#2980B9;">
-    <div class="col-12">
-        <router-outlet></router-outlet>
-    </div>
-    
-</section>
+        </div>
+    </header>
+
+    <section class="row">
+        <div class="col-12">
+            <router-outlet></router-outlet>
+        </div>
+
+    </section>
 </div>
-
-
