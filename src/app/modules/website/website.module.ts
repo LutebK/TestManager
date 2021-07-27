@@ -9,6 +9,11 @@ import { MainMenuPage } from './pages/main-menu/main-menu.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { OptionsPage } from './pages/options/options.page';
 import { LessonsPage } from './pages/lessons/lessons.page';
+import { OptionsEducationPage } from './pages/options/options-education/options-education.page';
+import { OptionsHelpPage } from './pages/options/options-help/options-help.page';
+import { OptionsChangepassPage } from './pages/options/options-changepass/options-changepass.page';
+import { OptionsInvitePage } from './pages/options/options-invite/options-invite.page';
+import { OptionsPremiumPage } from './pages/options/options-premium/options-premium.page';
 
 
 @NgModule({
@@ -19,7 +24,12 @@ import { LessonsPage } from './pages/lessons/lessons.page';
     MainMenuPage,
     ProfilePage,
     OptionsPage,
-    LessonsPage
+    LessonsPage,
+    OptionsEducationPage,
+    OptionsHelpPage,
+    OptionsChangepassPage,
+    OptionsInvitePage,
+    OptionsPremiumPage
   ],
   imports: [
     CommonModule,
