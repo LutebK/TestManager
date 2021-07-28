@@ -12,13 +12,27 @@ export class ProfilePage implements OnInit {
   school: any = "Okulu"
   class: any = "Sınıfı"
 
+  pPhoto = true
+
+  picturePath : any
+
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
-  saveChanges(){
+  saveChanges() {
+    alert("Maalesef şu anda çalışmıyor :/")
+  }
 
+
+
+  setProfilePhoto() {    
+    this.pPhoto = !this.pPhoto
+    var p = document.getElementById("picPath");
+    console.log(p.nodeValue)
+    
+    
   }
 }

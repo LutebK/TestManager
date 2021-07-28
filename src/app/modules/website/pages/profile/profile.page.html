@@ -21,8 +21,8 @@
     <div class="col-12">
       <div class="circle">
         <div class="user center-white">
-          <i class="far fa-user"></i>
-          <!-- <img src="https://netger.net/logo-s.png" alt=""> -->
+          <i *ngIf=pPhoto class="far fa-user"></i>
+          <img *ngIf=!pPhoto src="{{picturePath}}" alt="">         
         </div>
       </div>
     </div>
@@ -33,13 +33,14 @@
 
     <div class="col-6">
 
-      <button class="camera center-white"><i class="fas fa-camera"></i></button>
+      <button class="camera center-white" data-bs-toggle="modal" data-bs-target="#editPhoto">
+        <i class="fas fa-camera"></i></button>
 
     </div>
 
     <div class="col-6">
 
-      <button class="pen center-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <button class="pen center-white" data-bs-toggle="modal" data-bs-target="#editProfile">
         <i class="fas fa-pen"></i></button>
 
     </div>
@@ -95,7 +96,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div class="modal fade" id="editProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -113,11 +114,11 @@
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Soyisim</span>
-            <input type="text" class="form-control" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="surname" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Okul</span>
-            <input type="text" class="form-control" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="school" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Sınıf</span>
@@ -137,7 +138,40 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-        <button type="button" class="btn btn-primary">Kaydet</button>
+        <button type="button" class="btn btn-success" (click)="saveChanges()">Kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="editPhoto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Profil Fotoğrafını Düzenle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <input class="form-control" type="file" id="picPath" accept="image/*">
+        </div>
+
+        <div style="float:left; width: 42%;margin-right: 3%;">
+          <hr />
+        </div>
+        ya da    
+        <div style="float:right; width: 42%;">
+          <hr />
+        </div>
+
+        <button style="position: relative; left: calc(50% - 75px);" class="btn btn-primary"
+          (click)="setProfilePhoto()"><i class="fas fa-camera"></i>&nbsp;Fotoğrafını Çek</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        <button type="button" class="btn btn-success" (click)="setProfilePhoto()">Kaydet</button>
       </div>
     </div>
   </div>
