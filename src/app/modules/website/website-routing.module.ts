@@ -8,6 +8,7 @@ import { MainPage } from './pages/main/main.page';
 import { OptionsPage } from './pages/options/options.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { OptionsEducationPage } from './pages/options/options-education/options-education.page';
+import { TestPage } from './pages/lessons/topic/test/test.page';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'ayarlar', component: OptionsPage },
       { path: 'eğitim', component: OptionsEducationPage },
       {path: 'konular', component:TopicPage},
+      {path: 'testler', component:TestPage},
       { path: '', component: MainPage }   
     ]}
     ];
