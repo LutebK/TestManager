@@ -7,6 +7,7 @@ import { LoginPage } from './pages/login/login.page';
 import { RegisterPage } from './pages/register/register.page';
 import { ForgotPasswordPage } from './pages/forgot-password/forgot-password.page';
 import { RootPage } from './pages/root/root.page';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RootPage } from './pages/root/root.page';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [RootPage]

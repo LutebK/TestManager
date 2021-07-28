@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
+  name: any = "Ad"
+  surname: any = "Soyad"
+  school: any = "Okulu"
+  class: any = "Sınıfı"
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  saveChanges(){
+
+  }
 }

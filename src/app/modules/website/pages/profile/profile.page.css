@@ -11,6 +11,8 @@ button {
     text-decoration: none;
 }
 
+span{width: 90px;}
+
 .center-white {  
   align-items: center;
   text-align: center;
