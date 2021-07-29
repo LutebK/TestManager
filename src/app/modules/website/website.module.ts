@@ -21,7 +21,6 @@ import { StatsPage } from './pages/stats/stats.page';
 import { CalenderPage } from './pages/calender/calender.page';
 import { GroupsPage } from './pages/groups/groups.page';
 
-
 @NgModule({
   declarations: [
     ContentListingPage,
@@ -45,7 +44,7 @@ import { GroupsPage } from './pages/groups/groups.page';
   imports: [
     CommonModule,
     WebsiteRoutingModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class WebsiteModule { }

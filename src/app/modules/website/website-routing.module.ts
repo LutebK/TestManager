@@ -31,7 +31,7 @@ const routes: Routes = [
       { path: 'yardım', component: OptionsHelpPage },
       { path: 'sifredegis', component: OptionsChangepassPage },
       { path: 'davetet', component: OptionsInvitePage },
-      { path: 'testler', component: TestPage },
+      { path: 'konular/testler', component: TestPage },
       { path: 'istatistikler', component: StatsPage },
       { path: 'ajanda', component: CalenderPage },
       { path: 'gruplar', component: GroupsPage },
