@@ -19,10 +19,12 @@
     background-color: #24394E;
     color: #E0D7D7;
     font-size: 20px;
+    margin-top: 2px;
 }
-.navmenu i{
-    color: #E0D7D7;
-    
+.navmenu button i{
+    position: absolute;
+    left: calc(50% - 150px);
+    font-size: 34px;
+}
 
-}
 

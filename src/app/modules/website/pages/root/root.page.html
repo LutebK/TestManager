@@ -6,7 +6,7 @@
                 <button class="navbtn"
                     style="height: 48px; text-align: center; border: none; position: absolute; width: 48px; font-size: 28px; border: none; background-color: #2980B9;"
                     (click)="setPath()">
-                    <a [routerLink]="['/website']"><i class="fas fa-bars"></i></a>
+                    <i class="fas fa-bars"></i>
                 </button>
                 <div style="text-align: center; color: white; margin-right: -24px; ">
                     <span style="line-height: 48px;  display: inline-block; width: 100%;">Uygulama İsmi</span>
@@ -39,28 +39,32 @@
         </header>
     </div>
     <nav *ngIf="mainMenuPath2"  class="navmenu" >
-        <div style="height: 100%; width: 100%; position: fixed; background-color: #34495E; padding-top: 100px; text-align: start;">
-            <button >
-                <i class="fas fa-home"></i>
+        <div style="height: 100%; width: 100%; position: fixed; background-color: #34495E; padding-top: 100px; text-align: start; margin-left: -12px;">
+            <button [routerLink]="['/website']"  (click)="setPath()">
+                <i class="fas fa-home" style="margin-right: 20px;"></i>
                 <span>Anasayfa</span>
             </button>
-            <button >
+            <button [routerLink]="['/website/profil']"  (click)="setPath()">
                 <i class="fas fa-address-book"></i>
                 <span>Profil</span>
             </button>
-            <button >
+            <button [routerLink]="['/website/dersler']"  (click)="setPath()">
+                <i class="fas fa-book"></i>
+                <span>Dersler</span>
+            </button>
+            <button [routerLink]="['/website/istatistikler']"  (click)="setPath()">
                 <i class="fas fa-chart-line"></i>
                 <span>İstatistikler</span>
             </button>
-            <button >
+            <button [routerLink]="['/website/ajanda']"  (click)="setPath()">
                 <i class="fas fa-calendar-alt"></i>
                 <span>Ajandam</span>
             </button>
-            <button >
+            <button [routerLink]="['/website/gruplar']"  (click)="setPath()">
                 <i class="fas fa-users"></i>
                 <span>Gruplar</span>
             </button>
-            <button >
+            <button [routerLink]="['website/ayarlar']"  (click)="setPath()">
                 <i class="fas fa-cog"></i>
                 <span>Ayarlar</span>
             </button>
