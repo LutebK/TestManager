@@ -1,0 +1,31 @@
+.userselect button{
+    height: 100%;
+    width: 100%;    
+}
+
+i{
+    font-size: 24px;
+    width: 30px;
+    height: 24px;
+    margin-right: 3%;
+    position: relative;
+    
+}
+span{    
+    font-size: 16px;
+}
+.chat{
+    margin-top: -16px;
+    
+} 
+.chat i{
+    right: 35%;
+}
+
+.chat span{
+    position: absolute;
+    right: 55%;
+}
+li {
+    width: 50%;
+}

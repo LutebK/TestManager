@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./groups.page.css']
 })
 export class GroupsPage implements OnInit {
-
+  userList: any[]=["kullanıcı1","kullanıcı2","kullanıcı3"];
+  usersList: any[]=["grup1","grup2","grup3"];
   constructor() { }
 
   ngOnInit(): void {
