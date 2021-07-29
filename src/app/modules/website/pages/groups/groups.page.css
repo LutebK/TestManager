@@ -18,10 +18,19 @@ span{
     margin-top: -16px;
     
 } 
+.chat2{
+    margin-top: -16px;
+}
 .chat i{
     right: 35%;
 }
-
+.chat2 i{
+    right: 35%;
+}
+.chat2 span{
+    position: absolute;
+    right: 60%;
+}
 .chat span{
     position: absolute;
     right: 55%;
