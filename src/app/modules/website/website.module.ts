@@ -21,6 +21,11 @@ import { StatsPage } from './pages/stats/stats.page';
 import { CalenderPage } from './pages/calender/calender.page';
 import { GroupsPage } from './pages/groups/groups.page';
 
+import { LoginPage } from './pages/login/login.page';
+import { RegisterPage } from './pages/login/register/register.page';
+import { ForgotPasswordPage } from './pages/login/forgot-password/forgot-password.page';
+import { ResetPageComponent } from './pages/login/forgot-password/reset-page/reset-page.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { GroupsPage } from './pages/groups/groups.page';
     TestPage,
     StatsPage,
     CalenderPage,
-    GroupsPage
+    GroupsPage,
+   
+    LoginPage,
+         RegisterPage,
+         ForgotPasswordPage,
+         ResetPageComponent
   ],
   imports: [
     CommonModule,

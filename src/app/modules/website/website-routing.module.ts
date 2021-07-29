@@ -15,6 +15,11 @@ import { TestPage } from './pages/lessons/topic/test/test.page';
 import { StatsPage } from './pages/stats/stats.page';
 import { CalenderPage } from './pages/calender/calender.page';
 import { GroupsPage } from './pages/groups/groups.page';
+import { LoginPage } from './pages/login/login.page';
+import { RegisterPage } from './pages/login/register/register.page';
+import { ForgotPasswordPage } from './pages/login/forgot-password/forgot-password.page';
+import { ResetPageComponent } from './pages/login/forgot-password/reset-page/reset-page.component';
+import { OptionsPremiumPage } from './pages/options/options-premium/options-premium.page';
 
 const routes: Routes = [
   {
@@ -35,6 +40,11 @@ const routes: Routes = [
       { path: 'istatistikler', component: StatsPage },
       { path: 'ajanda', component: CalenderPage },
       { path: 'gruplar', component: GroupsPage },
+      {path: 'giris' , component: LoginPage},
+      {path: 'kayıtol' , component: RegisterPage},
+      {path: 'sifrereset' , component: ForgotPasswordPage},
+      {path: 'yenisifrereset' , component: ResetPageComponent},
+      {path: 'premium' , component: OptionsPremiumPage},
       { path: '', component: MainPage }
     ]
   }

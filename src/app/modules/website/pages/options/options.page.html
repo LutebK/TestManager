@@ -2,7 +2,8 @@
 
     <div class="col-12" style="padding: 0px; background-color: #475A6D;">
 
-        <div *ngFor="let button of list" [routerLink]="button.url" style= "width: 100%; height: 48px; margin-bottom: 8px; background-color: #34495E; ">
+        <div *ngFor="let button of list" [routerLink]="button.url"
+            style="width: 100%; height: 48px; margin-bottom: 8px; background-color: #34495E; ">
             <div
                 style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
                 <i [class]="button.icon" [ngStyle]="{'color':button.iconColor}"></i>
@@ -16,26 +17,25 @@
                 <i *ngIf="button.arrow" class="fas fa-chevron-right arrowOptions positionFunc iconOptions"></i>
             </div>
         </div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col-12" style="padding: 0px; background-color: #475A6D;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" style="padding: 0px; background-color: #475A6D;">
 
-                <div *ngFor="let button of list1" [routerLink]="button.url" style= "width: 100%; height: 48px; margin-bottom: 8px; background-color: #34495E; ">
-                    <div
-                        style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
-                        <i [class]="button.icon" [ngStyle]="{'color':button.iconColor}"></i>
-                    </div>
-                    <div
-                        style="line-height: 48px; height: 48px; text-align: center; display: inline-block; font-size: 12px; width: calc(100% - 96px);">
-                        <p class="titleOptions">{{button.title}}</p>
-                    </div>
-                    <div
-                        style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
-                        <i *ngIf="button.arrow" class="fas fa-chevron-down arrowOptions positionFunc iconOptions"></i>
-                    </div>
-                </div>
-                </div>
+        <div *ngFor="let button of list1" [routerLink]="button.url"
+            style="width: 100%; height: 48px; margin-bottom: 8px; background-color: #34495E; ">
+            <div
+                style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
+                <i [class]="button.icon" [ngStyle]="{'color':button.iconColor}"></i>
+            </div>
+            <div
+                style="line-height: 48px; height: 48px; text-align: center; display: inline-block; font-size: 12px; width: calc(100% - 96px);">
+                <p class="titleOptions">{{button.title}}</p>
+            </div>
+            <div
+                style="height: 48px; width: 48px; line-height: 48px; text-align: center; display: inline-block; font-size: 24px;">
+                <i *ngIf="button.arrow" class="fas fa-chevron-down arrowOptions positionFunc iconOptions"></i>
+            </div>
         </div>
-        
-            
+    </div>
+</div>
