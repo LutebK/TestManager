@@ -11,3 +11,27 @@
 .downc{
     color: #9B9191;
 }
+
+.carousel-item {
+    height: 5rem;
+    background: rgb(192, 163, 163);
+    color: white;
+    position: relative;
+  }
+
+.container {
+    background-color: rgb(83, 138, 185);
+    color: aliceblue;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 5px;
+    text-align: center;
+
+  }
+  
+.carousel slide{
+    background-color: aliceblue;
+    width: 100%;
+  }
+  

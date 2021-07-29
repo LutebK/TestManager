@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'ayarlar', component: OptionsPage },
       { path: 'eğitim', component: OptionsEducationPage },
       {path: 'konular', component:TopicPage},
-      {path: 'testler', component:TestPage},
+      {path: 'testler/:testID', component:TestPage},
       { path: '', component: MainPage }   
     ]}
     ];
