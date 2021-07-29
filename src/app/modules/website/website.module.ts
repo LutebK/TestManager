@@ -15,6 +15,8 @@ import { OptionsChangepassPage } from './pages/options/options-changepass/option
 import { OptionsInvitePage } from './pages/options/options-invite/options-invite.page';
 import { OptionsPremiumPage } from './pages/options/options-premium/options-premium.page';
 import { TopicPage } from './pages/lessons/topic/topic.page';
+import { TestPage } from './pages/lessons/topic/test/test.page';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,11 +33,13 @@ import { TopicPage } from './pages/lessons/topic/topic.page';
     OptionsChangepassPage,
     OptionsInvitePage,
     OptionsPremiumPage,
-    TopicPage
+    TopicPage,
+    TestPage
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
+    FormsModule
   ]
 })
 export class WebsiteModule { }

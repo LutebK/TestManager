@@ -2,10 +2,7 @@
     background-color: #2980B9;
 }
 
-.navbtn{
-    background-color: #2980B9;
-    
-}
+
 .fa-bars{
     color: #DAF4C5;
     
@@ -13,6 +10,19 @@
 .userImg{
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    border-radius:  35px;
     background-color: gray;
 }
+.navmenu button{
+    width: 100%;
+    height: 46px;
+    background-color: #24394E;
+    color: #E0D7D7;
+    font-size: 20px;
+}
+.navmenu i{
+    color: #E0D7D7;
+    
+
+}
+

@@ -8,9 +8,13 @@ import { MainPage } from './pages/main/main.page';
 import { OptionsPage } from './pages/options/options.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { OptionsEducationPage } from './pages/options/options-education/options-education.page';
+<<<<<<< HEAD
 import { OptionsHelpPage } from './pages/options/options-help/options-help.page';
 import { OptionsChangepassPage } from './pages/options/options-changepass/options-changepass.page';
 import { OptionsInvitePage } from './pages/options/options-invite/options-invite.page';
+=======
+import { TestPage } from './pages/lessons/topic/test/test.page';
+>>>>>>> 27b1c5cbe003a7f81628317c5f9d4696e0456995
 
 const routes: Routes = [
   {
@@ -21,9 +25,13 @@ const routes: Routes = [
       { path: 'ayarlar', component: OptionsPage },
       { path: 'eğitim', component: OptionsEducationPage },
       {path: 'konular', component:TopicPage},
+<<<<<<< HEAD
       {path: 'yardım', component:OptionsHelpPage},
       {path: 'sifredegis', component:OptionsChangepassPage},
       {path: 'davetet', component:OptionsInvitePage},
+=======
+      {path: 'testler', component:TestPage},
+>>>>>>> 27b1c5cbe003a7f81628317c5f9d4696e0456995
       { path: '', component: MainPage }   
     ]}
     ];
