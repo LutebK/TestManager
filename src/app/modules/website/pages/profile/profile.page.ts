@@ -28,6 +28,10 @@ export class ProfilePage implements OnInit {
     alert("Yakında Sizlerle... :D")
   }
 
+  getProfilPhoto() {
+    return this.picturePath;
+  }
+
   setProfilePhoto() {
     this.pPhoto = !this.pPhoto;
     this.picturePath = (document.getElementById("picPath") as HTMLInputElement).value;

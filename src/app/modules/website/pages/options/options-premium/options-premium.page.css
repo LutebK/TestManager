@@ -1,0 +1,32 @@
+.titleOptions{
+
+    font-family: Fresca;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+
+.carousel-item {
+    height: 15rem;
+    background: #777;
+    color: white;
+    position: relative;
+  }
+
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 5px;
+    text-align: center;
+
+  }
+  
+.carousel slide{
+    width: 100%;
+  }
