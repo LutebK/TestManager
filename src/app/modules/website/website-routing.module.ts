@@ -8,6 +8,9 @@ import { MainPage } from './pages/main/main.page';
 import { OptionsPage } from './pages/options/options.page';
 import { ProfilePage } from './pages/profile/profile.page';
 import { OptionsEducationPage } from './pages/options/options-education/options-education.page';
+import { OptionsHelpPage } from './pages/options/options-help/options-help.page';
+import { OptionsChangepassPage } from './pages/options/options-changepass/options-changepass.page';
+import { OptionsInvitePage } from './pages/options/options-invite/options-invite.page';
 
 const routes: Routes = [
   {
@@ -18,6 +21,9 @@ const routes: Routes = [
       { path: 'ayarlar', component: OptionsPage },
       { path: 'eğitim', component: OptionsEducationPage },
       {path: 'konular', component:TopicPage},
+      {path: 'yardım', component:OptionsHelpPage},
+      {path: 'sifredegis', component:OptionsChangepassPage},
+      {path: 'davetet', component:OptionsInvitePage},
       { path: '', component: MainPage }   
     ]}
     ];

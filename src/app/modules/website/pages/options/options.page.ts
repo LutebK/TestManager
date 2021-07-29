@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class OptionsPage implements OnInit {
 list: listItem[] = [
   {
-    icon: "fas fa-key" , title: "Şifre Değiştir" , arrow: true , url:"..." , iconColor: "#222F3E"
+    icon: "fas fa-key" , title: "Şifre Değiştir" , arrow: true , url:"./sifredegis" , iconColor: "#222F3E"
   },
   {
     icon: "fas fa-award" , title: "Premium Üyelik" , arrow: true , url: "..." , iconColor: "#F1C40F"
   } ,
   {
-    icon: "fas fa-user-friends" , title: "Arkadaşlarını Davet Et" , arrow: true , url: "..." , iconColor: "#16A085" 
+    icon: "fas fa-user-friends" , title: "Arkadaşlarını Davet Et" , arrow: true , url: "./davetet" , iconColor: "#16A085" 
   },
 ]
 
@@ -23,7 +23,7 @@ list1: listChevron[] = [
     icon: "fas fa-book-open" , title: "Eğitim Düzeyi Seç" , arrow: true , url: "./eğitim" , iconColor: "#130F40" 
   },
   {
-    icon: "fas fa-question" , title: "Yardım" , arrow: true , url: "..." , iconColor: "#27AE60" 
+    icon: "fas fa-question" , title: "Yardım" , arrow: true , url: "./yardım" , iconColor: "#27AE60" 
   }
 ]
   constructor() {
