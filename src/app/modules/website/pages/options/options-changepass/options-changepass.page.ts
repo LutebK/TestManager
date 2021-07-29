@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule, NgStyle ,NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'website-options-changepass',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options-changepass.page.css']
 })
 export class OptionsChangepassPage implements OnInit {
+
+email: any;
+hatali: false;
 
   constructor() { }
 
