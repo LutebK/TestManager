@@ -10,7 +10,7 @@ export class ProfilePage implements OnInit {
   name: any = "Ad"
   surname: any = "Soyad"
   school: any = "Okulu"
-  class: any = "Sınıfı"
+  class: any = ""
 
   pPhoto = true
   picturePath: any
@@ -31,5 +31,13 @@ export class ProfilePage implements OnInit {
   setProfilePhoto() {
     this.pPhoto = !this.pPhoto;
     this.picturePath = (document.getElementById("picPath") as HTMLInputElement).value;
+  }
+
+  logOut() {
+    this.pPhoto = true;
+    this.name = "Ad";
+    this.surname = "Soyad";
+    this.school = "Okulu";
+    this.class = "";
   }
 }
