@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "testmanager-fb88a": {
+      "hosting": {
+        "TestManager": [
+          "testmanager-fb88a"
+        ]
+      }
+    }
+  }
+}
