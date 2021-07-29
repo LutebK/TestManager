@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatsPage implements OnInit {
 
+  dogru:any = 0
+  yanlis:any = 0
+  net:any = 0
+
+  ilerleme:any = 0
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,65 @@
+.stats {
+    position: relative;
+  width: 100%;
+  height: 100%;  
+  background: #2980B9;
+}
+
+p {
+    display: inline-block;    
+    margin: 3% 3% 0 0;
+    padding: 0;    
+}
+
+.dogru {
+    color: #2ecc71;
+}
+
+.yanlis {
+    color: #e74c3c;
+}
+
+.net {
+    color: #2980b9;
+}
+
+.bg-stats{
+    border-radius: 10px;
+    margin: 5% 3%;    
+    padding: 0;
+    position: relative;
+  width: calc(100% - 20px); 
+  height: auto;
+  background: #2C3E50;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;  
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.math{    
+width: 91px;
+height: 21px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 21px;
+align-items: center;
+color: #FFFFFF;
+}
+
+.fa-square-root-alt{   
+width: 25px;
+height: 25px;
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 21px;
+align-items: center;
+color: #FFFFFF;
+margin: 3%;
+}
+
+.math-stats i, p {
+    color: white;
+}
