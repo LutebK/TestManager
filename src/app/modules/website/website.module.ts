@@ -21,15 +21,12 @@ import { StatsPage } from './pages/stats/stats.page';
 import { CalenderPage } from './pages/calender/calender.page';
 import { GroupsPage } from './pages/groups/groups.page';
 
-<<<<<<< HEAD
-=======
 import { LoginPage } from './pages/login/login.page';
 import { RegisterPage } from './pages/login/register/register.page';
 import { ForgotPasswordPage } from './pages/login/forgot-password/forgot-password.page';
 import { ResetPageComponent } from './pages/login/forgot-password/reset-page/reset-page.component';
 
 
->>>>>>> 13cc029399a28720d28f44f251a2dcb81d7cf67c
 @NgModule({
   declarations: [
     ContentListingPage,
