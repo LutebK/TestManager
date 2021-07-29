@@ -17,6 +17,9 @@ import { OptionsPremiumPage } from './pages/options/options-premium/options-prem
 import { TopicPage } from './pages/lessons/topic/topic.page';
 import { TestPage } from './pages/lessons/topic/test/test.page';
 import { FormsModule } from '@angular/forms';
+import { StatsPage } from './pages/stats/stats.page';
+import { CalenderPage } from './pages/calender/calender.page';
+import { GroupsPage } from './pages/groups/groups.page';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { FormsModule } from '@angular/forms';
     OptionsInvitePage,
     OptionsPremiumPage,
     TopicPage,
-    TestPage
+    TestPage,
+    StatsPage,
+    CalenderPage,
+    GroupsPage
   ],
   imports: [
     CommonModule,

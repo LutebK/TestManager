@@ -12,6 +12,9 @@ import { OptionsHelpPage } from './pages/options/options-help/options-help.page'
 import { OptionsChangepassPage } from './pages/options/options-changepass/options-changepass.page';
 import { OptionsInvitePage } from './pages/options/options-invite/options-invite.page';
 import { TestPage } from './pages/lessons/topic/test/test.page';
+import { StatsPage } from './pages/stats/stats.page';
+import { CalenderPage } from './pages/calender/calender.page';
+import { GroupsPage } from './pages/groups/groups.page';
 
 const routes: Routes = [
   {
@@ -29,6 +32,9 @@ const routes: Routes = [
       { path: 'sifredegis', component: OptionsChangepassPage },
       { path: 'davetet', component: OptionsInvitePage },
       { path: 'testler', component: TestPage },
+      { path: 'istatistikler', component: StatsPage },
+      { path: 'ajanda', component: CalenderPage },
+      { path: 'gruplar', component: GroupsPage },
       { path: '', component: MainPage }
     ]
   }
@@ -38,4 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class WebsiteRoutingModule {}
+export class WebsiteRoutingModule { }
