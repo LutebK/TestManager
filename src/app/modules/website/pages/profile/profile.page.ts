@@ -43,5 +43,6 @@ export class ProfilePage implements OnInit {
     this.surname = "Soyad";
     this.school = "Okulu";
     this.class = "";
+    alert("Çıkış Yapıldı.")
   }
 }

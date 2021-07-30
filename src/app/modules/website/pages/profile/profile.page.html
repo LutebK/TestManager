@@ -64,7 +64,7 @@
 
   <div class="row">
     <div class="col-12">
-      <button class="bg stats center-white" [routerLink]="['/website/istatistikler']" >
+      <button class="bg stats center-white" [routerLink]="['/website/istatistikler']">
         <i class="fas fa-chart-line"></i>
         İstatistiklerim
       </button>
@@ -95,7 +95,7 @@
 
 <!-- Modals -->
 <div class="modal fade" id="editProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -144,18 +144,18 @@
 
 
 <div class="modal fade" id="logoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Çıkış Yapılıyor...</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
       </div>
-      <div class="modal-body">        
+      <div class="modal-body">
         Onaylıyor musunuz ?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logOut()">Evet</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logOut()" [routerLink]="['/website/giris']">Evet</button>
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Hayır</button>
       </div>
     </div>
@@ -163,7 +163,7 @@
 </div>
 
 <div class="modal fade" id="editPhoto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -184,7 +184,9 @@
         </div>
 
         <button style="position: relative; left: calc(50% - 75px);" class="btn btn-primary"
-          (click)="takeProfilePhoto()"><i class="fas fa-camera"></i>&nbsp;Fotoğrafını Çek</button>
+                (click)="takeProfilePhoto()">
+          <i class="fas fa-camera"></i>&nbsp;Fotoğrafını Çek
+        </button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>

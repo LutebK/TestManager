@@ -6,7 +6,7 @@
   background: #2980B9;
 }
 
-.close{
+.close {
   background: none;
   color: white;
   font-size: 32px;
@@ -88,7 +88,7 @@ span {
 
 .bg {
   padding: 0;
-  width: calc(100% - 50px); 
+  width: calc(100% - 50px);
   height: 54px;
   background: #2C3E50;
   border: 1px solid #FFFFFF;
@@ -152,7 +152,7 @@ span {
   line-height: 28px;
   background: none;
   outline: none;
-  border-bottom: #ffffff solid;  
+  border-bottom: #ffffff solid;
 }
 
 .camera {
@@ -166,7 +166,7 @@ span {
   line-height: 28px;
   background: none;
   outline: none;
-  border-bottom: #ffffff solid;  
+  border-bottom: #ffffff solid;
 }
 
 .user {
