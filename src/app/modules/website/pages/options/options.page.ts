@@ -11,7 +11,7 @@ list: listItem[] = [
     icon: "fas fa-key" , title: "Şifre Değiştir" , arrow: true , url:"./sifredegis" , iconColor: "#222F3E"
   },
   {
-    icon: "fas fa-award" , title: "Premium Üyelik" , arrow: true , url: "..." , iconColor: "#F1C40F"
+    icon: "fas fa-award" , title: "Premium Üyelik" , arrow: true , url: "./premium" , iconColor: "#F1C40F"
   } ,
   {
     icon: "fas fa-user-friends" , title: "Arkadaşlarını Davet Et" , arrow: true , url: "./davetet" , iconColor: "#16A085" 
