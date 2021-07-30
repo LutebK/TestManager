@@ -6,14 +6,6 @@
   background: #2980B9;
 }
 
-.close {
-  background: none;
-  color: white;
-  font-size: 32px;
-  line-height: 32px;
-  padding: 0;
-}
-
 button {
   border: none;
   text-decoration: none;
