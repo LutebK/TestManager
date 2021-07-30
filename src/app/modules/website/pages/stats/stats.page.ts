@@ -9,9 +9,9 @@ export class StatsPage implements OnInit {
 
   dogru:any = 0
   yanlis:any = 0
-  net:any = 0
+  bos:any = 0
 
-  ilerleme:any = 0
+  ilerleme:number = 50
 
   constructor() { }
 

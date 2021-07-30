@@ -8,21 +8,46 @@
                 </div>
             </div>
             <div class="col-6 text-end">
-                <p class="dogru">D:</p><p class="text-white">%{{dogru}}</p> 
-                <p class="yanlis">Y:</p><p class="text-white">%{{yanlis}}</p> 
-                <p class="net">N:</p><p class="text-white">%{{net}}</p> 
+                <p class="dogru">D:</p>
+                <p class="text-white">%{{dogru}}</p>
+                <p class="yanlis">Y:</p>
+                <p class="text-white">%{{yanlis}}</p>
+                <p class="bos">B:</p>
+                <p class="text-white">%{{bos}}</p>
             </div>
         </div>
 
         <div class="row text-white text-center">
-            <div class="col-2">
-               <p>%{{ilerleme}}</p> 
+            <div class="col-1">
+                <p class="ilerleme">%{{ilerleme}}</p>
             </div>
-            <div class="col-10 pt-2">
-                <div style="border: 3px green solid; width: 25%; float: left;"></div>
-                <div style="border: 3px white solid; width: 75%; float: right;"></div>
+            <div class="col-11 pr-2">
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width':ilerleme+'%'}"
+                        aria-valuenow="ilerleme" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
             </div>
         </div>
 
-    </div>
+        <div class="accordion p-1" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-head" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Detaylar için tıklayınız.
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
+                        plugin adds the appropriate classes that we use to style each element. These classes control the
+                        overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                        this with custom CSS or overriding our default variables. It's also worth noting that just about any
+                        HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
 </div>
