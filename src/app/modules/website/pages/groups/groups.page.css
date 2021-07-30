@@ -38,3 +38,10 @@ span{
 li {
     width: 50%;
 }
+ .btnUserEdit{
+    position: absolute; 
+    bottom: 32px; 
+    right: 32px; 
+    border-radius: 30px;
+    height: 7%;
+}

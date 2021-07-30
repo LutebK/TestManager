@@ -16,6 +16,26 @@
             </div>
         </header>
     </div>
+    <!-- <div *ngIf="mainMenuOut">
+        <header class="row" style="height: 48px;">
+            <div class="col-12 headerow" style=" margin-left: -12px; "> 
+
+                <button >
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+
+
+                <button class="navbtn"
+                    style="height: 48px; text-align: center; border: none; position: absolute; width: 48px; font-size: 28px; border: none; background-color: #2980B9;"
+                    (click)="setPath()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div style="text-align: center; color: white; margin-right: -24px; ">
+                    <span style="line-height: 48px;  display: inline-block; width: 100%;">Uygulama İsmi</span>
+                </div>
+            </div>
+        </header>
+    </div> -->
     <div *ngIf="mainMenuPath2">
         <header class="row" style="background-color: #34495E;">
             <div class="col-12" style="padding-top: 15px; ">
@@ -23,18 +43,14 @@
                     <div class="userImg" style="text-align: center; font-size: 35px; padding-top: 7px; ; float: left;">
                         <i class="fas fa-user"></i>
                     </div>
-
                     <span
                         style="text-align: center; width: auto; margin-top: 7px; margin-right: 5px; height: auto; font-size: 24px; display: inherit; font-size: 24px;">TESTMANAGER
                     </span>
-
                     <button class="navbtn"
                         style="width: 40px; height: 40px; font-size: 30px; padding-top: 2px; float: right; background-color: #34495E; border: none; " (click)="setPath()">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
-
-
             </div>
         </header>
     </div>
@@ -44,37 +60,35 @@
                 <i class="fas fa-home" ></i>
                 <span>Anasayfa</span>
             </button>
-            <button [routerLink]="['/website/profil']"  (click)="setPath()">
+            <button [routerLink]="['/website/profil']"  (click)="setPath();setheader()">
                 <i class="fas fa-address-book"></i>
                 <span>Profil</span>
             </button>
-            <button [routerLink]="['/website/dersler']"  (click)="setPath()">
+            <button [routerLink]="['/website/dersler']"  (click)="setPath();setheader()">
                 <i class="fas fa-book"></i>
                 <span>Dersler</span>
             </button>
-            <button [routerLink]="['/website/istatistikler']"  (click)="setPath()">
+            <button [routerLink]="['/website/istatistikler']"  (click)="setPath();setheader();">
                 <i class="fas fa-chart-line"></i>
                 <span>İstatistikler</span>
             </button>
-            <button [routerLink]="['/website/ajanda']"  (click)="setPath()">
+            <button [routerLink]="['/website/ajanda']"  (click)="setPath();setheader();">
                 <i class="fas fa-calendar-alt"></i>
                 <span>Ajandam</span>
             </button>
-            <button [routerLink]="['/website/gruplar']"  (click)="setPath()">
+            <button [routerLink]="['/website/gruplar']"  (click)="setPath();setheader();">
                 <i class="fas fa-users"></i>
                 <span>Gruplar</span>
             </button>
-            <button [routerLink]="['/website/ayarlar']"  (click)="setPath()">
+            <button [routerLink]="['/website/ayarlar']"  (click)="setPath();setheader();">
                 <i class="fas fa-cog"></i>
                 <span>Ayarlar</span>
             </button>
-
         </div>
     </nav>
     <section class="row" id="projectsection">
         <div class="col-12">
             <router-outlet></router-outlet>
         </div>
-
     </section>
 </div>
