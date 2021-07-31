@@ -1,52 +1,58 @@
-<div class="stats">
-    <div class="bg-stats">
-        <div class="row">
-            <div class="col-6">
-                <div class="math-stats">
-                    <i class="fas fa-square-root-alt"></i>
-                    <p class="math">Matematik</p>
+<div *ngFor="let i of array; index as j">
+    <div class="stats mt-3">
+        <div class="bg-stats">
+            <div class="row">
+                <div class="col-6">
+                    <div class="math-stats">
+                        <i class="fas fa-square-root-alt"></i>
+                        <p class="math">Matematik</p>
+                    </div>
+                </div>
+                <div class="col-6 text-end">
+                    <p class="dogru">D:</p>
+                    <p class="text-white">%{{dogru}}</p>
+                    <p class="yanlis">Y:</p>
+                    <p class="text-white">%{{yanlis}}</p>
+                    <p class="bos">B:</p>
+                    <p class="text-white">%{{bos}}</p>
                 </div>
             </div>
-            <div class="col-6 text-end">
-                <p class="dogru">D:</p>
-                <p class="text-white">%{{dogru}}</p>
-                <p class="yanlis">Y:</p>
-                <p class="text-white">%{{yanlis}}</p>
-                <p class="bos">B:</p>
-                <p class="text-white">%{{bos}}</p>
-            </div>
-        </div>
 
-        <div class="row text-white text-center">
-            <div class="col-1">
-                <p class="ilerleme">%{{ilerleme}}</p>
-            </div>
-            <div class="col-11 pr-2">
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width':ilerleme+'%'}"
-                        aria-valuenow="ilerleme" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="row text-white text-center">
+                <div class="col-2">
+                    <p class="ilerleme">%{{ilerleme}}</p>
+                </div>
+                <div class="col-10">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width':ilerleme+'%'}"
+                            aria-valuenow="ilerleme" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="accordion p-1" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-head" id="headingOne" style="margin-bottom: -0.0rem;">
-                    <button class="accordion-button accordion-button-white" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Detaylar için tıklayınız.
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                        collapse
-                        plugin adds the appropriate classes that we use to style each element. These classes control the
-                        overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
-                        this with custom CSS or overriding our default variables. It's also worth noting that just about
-                        any
-                        HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion p-1 mt-1 mb-1" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-head" id="headingOne" style="margin-bottom: 0.0rem;">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            [attr.data-bs-target]="'#data'+j" aria-expanded="false" [attr.aria-controls]="'data'+j">
+                            Detaylar için tıklayınız.
+                        </button>
+                    </h2>
+                    <div [id]="'data'+j" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                            collapse
+                            plugin adds the appropriate classes that we use to style each element. These classes control
+                            the
+                            overall appearance, as well as the showing and hiding via CSS transitions. You can modify
+                            any of
+                            this with custom CSS or overriding our default variables. It's also worth noting that just
+                            about
+                            any
+                            HTML can go within the <code>.accordion-body</code>, though the transition does limit
+                            overflow.
+                        </div>
                     </div>
                 </div>
             </div>

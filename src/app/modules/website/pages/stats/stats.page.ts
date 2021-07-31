@@ -11,7 +11,9 @@ export class StatsPage implements OnInit {
   yanlis:any = 0
   bos:any = 0
 
-  ilerleme:number = 50
+  ilerleme:number = 90
+
+  array:any = [1,2,3]
 
   constructor() { }
 
