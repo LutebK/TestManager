@@ -9,6 +9,7 @@ export class RootPage implements OnInit {
 
   mainMenuPath = true;
   mainMenuPath2=false;
+  mainMenuOut = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +22,9 @@ export class RootPage implements OnInit {
       document.getElementById("projectsection").style.display="none";
     else
       document.getElementById("projectsection").style.display="block";  
+  }
+  setheader(){
+    this.mainMenuOut = !this.mainMenuOut;
   }
   
 }

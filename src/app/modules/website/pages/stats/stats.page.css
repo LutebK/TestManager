@@ -10,6 +10,10 @@
   color: white;
 }
 
+.accordion-button::after {
+  color: white;
+}
+
 p {
   display: inline-block;
   margin: 3% 10px 0 0;

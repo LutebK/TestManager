@@ -41,3 +41,21 @@
         </div>
     </div>
 </div>
+
+<button class="btn btn-primary btnUserEdit" type="button" (click)="btnUserEditM()" [ngStyle]="!btnUserEdit? {'width': '170px', 'display': 'flex' }:{}">
+    <div *ngIf="!btnUserEdit" >
+        <div style="width: 100%; padding-top: 3px;  padding-right: 79px;">
+            <i class="fas fa-user-plus "></i>
+        </div>
+        <div style="width: 100%; margin-top: -27px; margin-left: 11px; "> 
+            <i class="fas fa-user-minus"></i>
+        </div>        
+    </div>
+
+    <div style="margin-top: 2px;">
+        <i class="fas fa-plus"></i>
+    </div>
+</button>
+
+
+

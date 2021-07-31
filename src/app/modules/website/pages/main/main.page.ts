@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RootPage } from '../root/root.page';
 
 @Component({
   selector: 'website-main',
@@ -11,5 +12,9 @@ export class MainPage implements OnInit {
 
   ngOnInit(): void {
   }
-  
+  headercontrol:boolean=false;
+
+  setheadermenu(){
+    this.headercontrol = !this.headercontrol;
+  }
 }
