@@ -1,23 +1,6 @@
 <div class="body">
 
-  <!-- <div class="row">
-
-          <div class="col-6">
-            <div class="arrow-left center-white">
-              <i class='fas fa-arrow-left'></i>
-            </div>
-          </div>
-
-          <div class="col-6">
-            <div class="bars center-white">
-              <i class="fas fa-bars"></i>
-            </div>
-          </div>
-
-        </div> -->
-
   <div class="row">
-
     <div class="col-12">
       <div class="circle">
         <div class="user center-white">
@@ -94,8 +77,8 @@
 
 
 <!-- Modals -->
-<div class="modal fade" id="editProfile" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="editProfile" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -107,16 +90,19 @@
 
           <div class="input-group mb-3">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">İsim</span>
-            <input type="text" class="form-control bg-dark text-white" [(ngModel)]="name" aria-describedby="basic-addon1">
+            <input type="text" class="form-control bg-dark text-white" [(ngModel)]="name"
+              aria-describedby="basic-addon1">
           </div>
 
           <div class="input-group mb-3">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">Soyisim</span>
-            <input type="text" class="form-control bg-dark text-white" [(ngModel)]="surname" aria-describedby="basic-addon1">
+            <input type="text" class="form-control bg-dark text-white" [(ngModel)]="surname"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">Okul</span>
-            <input type="text" class="form-control bg-dark text-white" [(ngModel)]="school" aria-describedby="basic-addon1">
+            <input type="text" class="form-control bg-dark text-white" [(ngModel)]="school"
+              aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3 bg-dark">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">Sınıf</span>
@@ -143,8 +129,8 @@
 </div>
 
 
-<div class="modal fade" id="logoutModal" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="logoutModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -155,15 +141,16 @@
         Onaylıyor musunuz ?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logOut()" [routerLink]="['/website/giris']">Evet</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logOut()"
+          [routerLink]="['/website/giris']">Evet</button>
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Hayır</button>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="editPhoto" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="editPhoto" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -184,7 +171,7 @@
         </div>
 
         <button style="position: relative; left: calc(50% - 75px);" class="btn btn-primary"
-                (click)="takeProfilePhoto()">
+          (click)="takeProfilePhoto()">
           <i class="fas fa-camera"></i>&nbsp;Fotoğrafını Çek
         </button>
       </div>
