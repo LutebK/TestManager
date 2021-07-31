@@ -25,6 +25,7 @@
     "ng-schema": "^0.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
+    "vue-bootstrap-pagination": "^2.10.3",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

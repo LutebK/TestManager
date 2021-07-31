@@ -1,5 +1,8 @@
 export class TestsInformation {
-    public testnumber: number;
-    public testimg: string;
+    public questionNumber: number;
+    public questionImg: string;
+    public answer : string;
+    public testID : string;
+    public questionUrl : string;
     
 }

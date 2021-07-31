@@ -12,19 +12,19 @@ export class LessonsPage implements OnInit {
       icon: "fas fa-pencil-alt", title:"TÜRKÇE", arrow: true, url:"./konular",iconColor:"#CF6503",
     },
     {
-      icon: "fas fa-square-root-alt", title:"MATEMATİK", arrow: true, url:"",iconColor:"#9296EF",
+      icon: "fas fa-square-root-alt", title:"MATEMATİK", arrow: true, url:"./konular",iconColor:"#9296EF",
     },
     {
-      icon: "fas fa-capsules", title:"FEN BİLGİSİ", arrow: true, url:"",iconColor:"#F04F4F",
+      icon: "fas fa-capsules", title:"FEN BİLGİSİ", arrow: true, url:"./konular",iconColor:"#F04F4F",
     },
     {
-      icon: "fas fa-people-arrows", title:"SOSYAL BİLGİLER", arrow: true, url:"",iconColor:"#D539EE",
+      icon: "fas fa-people-arrows", title:"SOSYAL BİLGİLER", arrow: true, url:"./konular",iconColor:"#D539EE",
     },
     {
-      icon: "fas fa-kaaba", title:"DİN KÜLTÜRÜ", arrow: true, url:"",iconColor:"#4FC01A",
+      icon: "fas fa-kaaba", title:"DİN KÜLTÜRÜ", arrow: true, url:"./konular",iconColor:"#4FC01A",
     },
     {
-      icon: "fas fa-comments", title:"İNGİLİZCE", arrow: true, url:"",iconColor:"#CBEA0F",
+      icon: "fas fa-comments", title:"İNGİLİZCE", arrow: true, url:"./konular",iconColor:"#CBEA0F",
     },
 
   ]
