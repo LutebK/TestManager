@@ -1,6 +1,7 @@
+import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularFireModule } from '@angular/fire';
 import { AppRoutingModule } from './app-routing.module';
 
 import { LoginPage } from './pages/login/login.page';
@@ -11,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    
+
     LoginPage,
     RegisterPage,
     ForgotPasswordPage,
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [RootPage]
