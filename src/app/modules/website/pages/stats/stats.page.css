@@ -9,7 +9,7 @@
 .accordion-button {
   background-color: #2C3E50;
   color: white;
-  height: 1px;  
+  height: 1px;
 }
 
 p {
@@ -71,14 +71,14 @@ p {
 }
 
 .math-stats {
-    padding: 0;
-    height: auto;
+  padding: 0;
+  height: auto;
 }
 
-.math-stats i, p {
-  color: white;
-  padding: 0;  
-}
+  .math-stats i, p {
+    color: white;
+    padding: 0;
+  }
 
 .col-6 {
   height: 80%;
