@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import { GroupsDocument, GroupsInformation } from 'src/app/models/groups-information.model';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -13,13 +14,13 @@ import { LoginPage } from '../login/login.page';
 export class GroupsServiceService {
 
   firebaseId:string=""
-  constructor(private firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore,private aut:AngularFireAuth) {
 
   }
 
 
   async userGets() {
-    return await this.firestore.collection('/users/myan2MPgZ0SYRa87t666glNurEs2/userAdded').get()
+    return await this.firestore.collection('/users/'+ (await this.aut.currentUser).uid+'/userAdded').get()
   }
   async userGet(){
     return await this.firestore.doc('/profile/myan2MPgZ0SYRa87t666glNurEs2').get();

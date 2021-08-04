@@ -50,6 +50,6 @@ export class RootPage implements OnInit {
   }
   signOut(){
     this.aut.signOut();
-    this.router.navigateByUrl("/giris")
+    this.router.navigateByUrl("")
   }
 }

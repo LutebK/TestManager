@@ -11,7 +11,7 @@ import { RootPage } from './pages/root/root.page';
 import { FormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
-
+import { AngularFireAuthGuardModule} from '@angular/fire/auth-guard'
 @NgModule({
   declarations: [
 
@@ -26,7 +26,8 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule
   ],
   providers: [],
   bootstrap: [RootPage]

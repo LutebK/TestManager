@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/modules/authentication.service';
+
 @Component({
   selector: 'website-login',
   templateUrl: './login.page.html',
@@ -27,8 +28,8 @@ export class LoginPage implements OnInit {
     let uid : LoginInformation={email:this.email,password:this.password}
     this.afs.signInWithEmailAndPassword(this.email,this.password).then(
       userCredential=> {var user = userCredential.user;this.signControl=true;this.router.navigateByUrl(
-      "/website"); this.userId.loginViaEmailAndPassword(uid);},
-      error=> {this.signControl=false})
+      "/website");},
+      error=> {this.signControl=false,alert(error)})
 
   }
 
