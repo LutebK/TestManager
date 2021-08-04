@@ -4,6 +4,7 @@ import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginPage } from '../login/login.page';
+import { AuthenticationService } from 'src/app/modules/authentication.service';
 
 
 @Component({
@@ -20,10 +21,10 @@ export class RootPage implements OnInit {
   b: any;
   array: any[] = [];
 
-  constructor(private router: Router,private aut:AngularFireAuth) { }
+  constructor(private router: Router,private aut:AngularFireAuth, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-
+    this.userDbCreated()
   }
 
   setPath() {
@@ -51,5 +52,8 @@ export class RootPage implements OnInit {
   signOut(){
     this.aut.signOut();
     this.router.navigateByUrl("")
+  }
+  async userDbCreated(){
+    this.authService.userIdDbCreate()
   }
 }

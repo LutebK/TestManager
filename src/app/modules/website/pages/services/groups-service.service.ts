@@ -20,17 +20,18 @@ export class GroupsServiceService {
 
 
   async userGets() {
-    return await this.firestore.collection('/users/'+ (await this.aut.currentUser).uid+'/userAdded').get()
+    return await this.firestore.collection('/users/'+ (await this.aut.currentUser).uid+'/groups/userAdded/addId').get()
   }
   async userGet(){
-    return await this.firestore.doc('/profile/myan2MPgZ0SYRa87t666glNurEs2').get();
+    return await this.firestore.doc('/users/'+ (await this.aut.currentUser).uid+'profile/profileInfo').get();
   }
 
   async userAdd(id: GroupsInformation){
-    return await this.firestore.collection('/users/myan2MPgZ0SYRa87t666glNurEs2/userAdded').add(id)
+    return await this.firestore.collection('/users/'+ (await this.aut.currentUser).uid+'/groups/userAdded/addId').add(id)
 }
 
+
   async getPicture(){
-    return await this.firestore.collection('/profile/'+ (await this.aut.currentUser).uid).get().subscribe((a:any)=> {console.log(a.data().picture)})
+    return await this.firestore.collection('/users/'+ (await this.aut.currentUser).uid+'profile/profileInfo').get()
   }
 }
