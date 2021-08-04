@@ -1,28 +1,29 @@
 <div class="row userselect">
     <div style="height: 100%; width: 100%; position: fixed; background-color: #e2e6eb;  padding: 0px;  ">
-        <div class="col-12" style="width: 100%;">            
+        <div class="col-12" style="width: 100%;">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">                    
+                <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-user-tab" data-bs-toggle="pill" data-bs-target="#pills-user" type="button" role="tab" aria-controls="pills-user" aria-selected="true" >
                         <i class="fas fa-user"></i>
                         Kisiler
                     </button>
                 </li>
-                <li class="nav-item" role="presentation">                    
+                <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-users-tab" data-bs-toggle="pill" data-bs-target="#pills-users" type="button" role="tab" aria-controls="pills-users" aria-selected="false">
                         <i class="fas fa-users"></i>
                         Gruplar
                     </button>
-                </li>               
+                </li>
               </ul>
               <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
                     <div class="row chat" >
-                        <div *ngFor="let i of userList">
+                        <div *ngFor="let i of array">
                            <button style="height: 40px; width: 100%; ;">
-                                <i class="fas fa-user" style="margin-right: 25px;"></i>
-                                <span >{{i}}</span>
-                           </button>        
+                                <!-- <i class="fas fa-user" style="margin-right: 25px;"></i> -->
+                                <img  width="35" height="35" src={{i.data.imgName}} >
+                                <span >{{i.data.userName}}</span>
+                           </button>
                         </div>
                     </div>
                 </div>
@@ -32,24 +33,29 @@
                            <button style="height: 40px; width: 100%;">
                                 <i class="fas fa-users" style="margin-right: 25px;"></i>
                                 <span >{{i}}</span>
-                           </button>        
+                           </button>
                         </div>
                     </div>
                 </div>
-               
-              </div>              
+
+              </div>
         </div>
     </div>
 </div>
 
 <button class="btn btn-primary btnUserEdit" type="button" (click)="btnUserEditM()" [ngStyle]="!btnUserEdit? {'width': '170px', 'display': 'flex' }:{}">
     <div *ngIf="!btnUserEdit" >
-        <div style="width: 100%; padding-top: 3px;  padding-right: 79px;">
-            <i class="fas fa-user-plus "></i>
+        <div style="width: 100%; padding-top: 3px;  padding-right: 79px; z-index: 999px;">
+          <button   data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="color: #e2e6eb; border: none; background-color: #0275d8;">
+              <i class="fas fa-user-plus "></i>
+
+          </button>
+
+
         </div>
-        <div style="width: 100%; margin-top: -27px; margin-left: 11px; "> 
+        <div style="width: 100%; margin-top: -27px; margin-left: 11px; ">
             <i class="fas fa-user-minus"></i>
-        </div>        
+        </div>
     </div>
 
     <div style="margin-top: 2px;">
@@ -58,4 +64,22 @@
 </button>
 
 
-
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Kullanıcı Ekle</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <input type="text">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button (click)="userAdded()" type="button" class="btn btn-primary">Ekle</button>
+      </div>
+    </div>
+  </div>
+</div>

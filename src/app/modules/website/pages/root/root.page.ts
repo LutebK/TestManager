@@ -1,6 +1,9 @@
+
+import { AngularFireAuth } from '@angular/fire/auth';
 import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginPage } from '../login/login.page';
 
 
 @Component({
@@ -17,10 +20,10 @@ export class RootPage implements OnInit {
   b: any;
   array: any[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private aut:AngularFireAuth) { }
 
   ngOnInit(): void {
-    
+    this.aut.currentUser.then(a=> {console.log(a.uid)})
   }
 
   setPath() {
@@ -44,5 +47,9 @@ export class RootPage implements OnInit {
     this.array.forEach(a =>  this.array[this.array.length - 1] == a ? url = url + a : url = url + a + "/" );
     this.router.navigateByUrl(url)
 
+  }
+  signOut(){
+    this.aut.signOut();
+    this.router.navigateByUrl("/giris")
   }
 }

@@ -1,6 +1,6 @@
 .userselect button{
     height: 100%;
-    width: 100%;    
+    width: 100%;
 }
 
 i{
@@ -9,15 +9,22 @@ i{
     height: 24px;
     margin-right: 3%;
     position: relative;
-    
+
 }
-span{    
+img{
+    border-radius: 50%;
+    left: -42%;
+    margin-right: 3%;
+    position: relative;
+}
+span{
     font-size: 16px;
+
 }
 .chat{
     margin-top: -16px;
-    
-} 
+
+}
 .chat2{
     margin-top: -16px;
 }
@@ -33,15 +40,15 @@ span{
 }
 .chat span{
     position: absolute;
-    right: 55%;
+    left: 23%;
 }
 li {
     width: 50%;
 }
  .btnUserEdit{
-    position: absolute; 
-    bottom: 32px; 
-    right: 32px; 
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
     border-radius: 30px;
     height: 7%;
 }

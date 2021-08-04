@@ -40,8 +40,6 @@ const routes: Routes = [
       { path: 'istatistikler', component: StatsPage },
       { path: 'ajanda', component: CalenderPage },
       { path: 'gruplar', component: GroupsPage },
-      {path: 'giris' , component: LoginPage},
-      {path: 'kayıtol' , component: RegisterPage},
       {path: 'sifrereset' , component: ForgotPasswordPage},
       {path: 'yenisifrereset' , component: ResetPageComponent},
       {path: 'premium' , component: OptionsPremiumPage},

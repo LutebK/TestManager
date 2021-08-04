@@ -16,12 +16,12 @@ export class AuthenticationService {
 
 
 
-    await this.angularFireAuth.signInWithEmailAndPassword(loginInfo.email , loginInfo.password);{
+   return await this.angularFireAuth.signInWithEmailAndPassword(loginInfo.email , loginInfo.password)
 
 
-    }
+
   }
 
-  
+
 
 }
