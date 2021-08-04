@@ -17,61 +17,62 @@ export class ProfilePage implements OnInit {
   school: any = "Okulu"
   class: any = ""
 
-  pPhoto = true
+  pPhoto = false
   picturePath: any
-  picturePath2: any
-
+  uploadBar = false
+  uploadData: any
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
 
-  constructor(private ps: ProfileServiceService, private afs: AngularFireStorage, private aut: AngularFireAuth) { }
+  constructor(private ps: ProfileServiceService, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
   ngOnInit(): void {
     this.setProfileInfos();
+    console.log(this.ps.getProfilePictureUrl());
   }
 
   async setProfileInfos() {
-    this.ps.getProfileInfo().then(t => {
+    this.ps.getProfileInfos().then(t => {
       t.subscribe((s: any) => {
-        this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class + '.', this.picturePath2 = s.data().picture
+        this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class, this.picturePath = s.data().picture
       })
     });
-    this.pPhoto = false;
+    this.picturePath == null ? this.pPhoto = true : this.pPhoto = false;
   }
 
   saveChanges() {
-    alert("Maalesef şu anda çalışmıyor :/")
+    let data: string[] = [this.name, this.surname, this.class, this.picturePath];
+    this.ps.setProfileInfos(data).then(t => { alert("Değişiklikler Kaydedildi.") });
   }
 
   takeProfilePhoto() {
     alert("Yakında Sizlerle... :D")
   }
 
-  getProfilPhoto() {
-    return this.picturePath2;
+  getProfilePhoto() {
+    return this.picturePath;
   }
 
   async upload(event: any) {
     const file = event.target.files[0];
     const fileName = "/users/" + await this.ps.getCurrentUid() + "/profilePicture/" + file.name;
-    const ref = this.afs.ref(fileName);
+    const ref = this.storage.ref(fileName);
     const task = ref.put(file);
 
+    this.uploadBar = true;
     this.uploadPercent = task.percentageChanges();
-    console.log(this.uploadPercent);
+    this.uploadPercent.subscribe(s => this.uploadData = s);
 
-    task.snapshotChanges().pipe(finalize(() => ref.getDownloadURL().subscribe(s => this.picturePath2 = s))).subscribe()
-
-    
+    task.snapshotChanges().pipe(finalize(() => ref.getDownloadURL().subscribe(s => this.picturePath = s))).subscribe()
   }
 
   setProfilePhoto() {
-    this.pPhoto = false;
-    //this.ps.uploadProfilePicture(this.picturePath);
+    this.pPhoto = true;
+    this.uploadBar = false;
   }
 
   logOut() {
-    this.pPhoto = true;
+    this.pPhoto = false;
     this.name = "Ad";
     this.surname = "Soyad";
     this.school = "Okulu";

@@ -14,20 +14,16 @@ export class ProfileServiceService {
     return (await this.aut.currentUser).uid
   }
 
-  async getProfileInfo() {
-    return await this.afs.doc("/profile/" + (await this.getCurrentUid()).toString()).get();
+  async getProfileInfos() {
+    return await this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/profile/profileInfo").get();
   }
 
-  async setProfileInfo() {
-    await this.afs.doc("/profile/" + this.getCurrentUid());
-  }
+  async setProfileInfos(data: string[]) {
+    await this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/profile/profileInfo").update({ name: data[0], surname: data[1], class: data[2], picture: data[3] });
+  } 
 
-  async uploadProfilePicture(path: string) {
-    await this.storage.upload("/users/" + this.getCurrentUid() + "/profilePicture/" + path, path);
-  }
-
-  async getProfilePicture(path: string) {
-    return this.storage.ref("/users/" + this.getCurrentUid() + "/profilePicture" + path).getDownloadURL().subscribe();
+  async getProfilePictureUrl() {
+    return this.storage.ref("users/" + (await this.getCurrentUid()).toString() + "/profilePicture");
   }
 
 }

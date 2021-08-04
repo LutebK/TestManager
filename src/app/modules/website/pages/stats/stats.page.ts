@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfilePage } from '../profile/profile.page';
 
 @Component({
   selector: 'website-stats',
