@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { ProfileServiceService } from '../services/profile-service.service';
+import { finalize } from 'rxjs/operators'
+import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'website-profile',
@@ -13,20 +17,26 @@ export class ProfilePage implements OnInit {
   school: any = "Okulu"
   class: any = ""
 
-  temp: any[] = new Array();
-
   pPhoto = true
   picturePath: any
+  picturePath2: any
 
-  constructor(private ps: ProfileServiceService) { }
+  uploadPercent: Observable<number>;
+  downloadURL: Observable<string>;
+
+  constructor(private ps: ProfileServiceService, private afs: AngularFireStorage, private aut: AngularFireAuth) { }
 
   ngOnInit(): void {
+    this.setProfileInfos();
   }
 
-  setProfileInfos() {
+  async setProfileInfos() {
     this.ps.getProfileInfo().then(t => {
-      t.subscribe((s: any) => { this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class + '.' })
+      t.subscribe((s: any) => {
+        this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class + '.', this.picturePath2 = s.data().picture
+      })
     });
+    this.pPhoto = false;
   }
 
   saveChanges() {
@@ -38,13 +48,26 @@ export class ProfilePage implements OnInit {
   }
 
   getProfilPhoto() {
-    return this.picturePath;
+    return this.picturePath2;
+  }
+
+  async upload(event: any) {
+    const file = event.target.files[0];
+    const fileName = "/users/" + await this.ps.getCurrentUid() + "/profilePicture/" + file.name;
+    const ref = this.afs.ref(fileName);
+    const task = ref.put(file);
+
+    this.uploadPercent = task.percentageChanges();
+    console.log(this.uploadPercent);
+
+    task.snapshotChanges().pipe(finalize(() => ref.getDownloadURL().subscribe(s => this.picturePath2 = s))).subscribe()
+
+    
   }
 
   setProfilePhoto() {
-    this.pPhoto = !this.pPhoto;
-    //this.picturePath = (document.getElementById("picPath") as HTMLInputElement).value;
-    this.picturePath = "https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2Fmyan2MPgZ0SYRa87t666glNurEs2%2F100_0234.jpg?alt=media&token=2acb4032-054a-4e50-9d57-b93993c6b31a"
+    this.pPhoto = false;
+    //this.ps.uploadProfilePicture(this.picturePath);
   }
 
   logOut() {
@@ -53,6 +76,7 @@ export class ProfilePage implements OnInit {
     this.surname = "Soyad";
     this.school = "Okulu";
     this.class = "";
+    this.aut.signOut();
     alert("Çıkış Yapıldı.")
   }
 }
