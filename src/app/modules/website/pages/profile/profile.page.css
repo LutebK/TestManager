@@ -161,7 +161,7 @@ span {
   border-bottom: #ffffff solid;
 }
 
-.user {
+.user i {
   width: 100%;
   height: 100%;
   position: relative;
@@ -170,6 +170,14 @@ span {
   font-weight: normal;
   font-size: 96px;
   line-height: 110px;
+}
+
+.user img {
+  width: 188px;
+  height: 188px;
+  border-radius: 50%;
+  padding: 2%;
+  z-index: 9;
 }
 
 .circle {
@@ -181,6 +189,7 @@ span {
   border: 1px solid #FFFFFF;
   border-radius: 50%;
   box-sizing: border-box;
+  z-index: 99;
 }
 
 .arrow-left {
