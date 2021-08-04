@@ -30,4 +30,7 @@ export class GroupsServiceService {
     return await this.firestore.collection('/users/myan2MPgZ0SYRa87t666glNurEs2/userAdded').add(id)
 }
 
+  async getPicture(){
+    return await this.firestore.collection('/profile/'+ (await this.aut.currentUser).uid).get().subscribe((a:any)=> {console.log(a.data().picture)})
+  }
 }

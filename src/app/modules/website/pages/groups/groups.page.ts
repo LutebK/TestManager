@@ -18,7 +18,7 @@ export class GroupsPage implements OnInit {
 
   ngOnInit(): void {
     this.userDbList()
-    console.log(this.array)
+    this.service.getPicture()
 
     // this.service.userGet().then(a=> {a.subscribe((b:any)=> {console.log(b.data().name)})})
   }

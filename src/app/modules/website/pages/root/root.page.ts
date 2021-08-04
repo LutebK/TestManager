@@ -23,7 +23,7 @@ export class RootPage implements OnInit {
   constructor(private router: Router,private aut:AngularFireAuth) { }
 
   ngOnInit(): void {
-    this.aut.currentUser.then(a=> {console.log(a.uid)})
+
   }
 
   setPath() {
