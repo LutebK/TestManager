@@ -24,7 +24,5 @@ export class RegisterPage implements OnInit {
     .then((userCredential=> {var user = userCredential.user; console.log("oluşturuldu") ;this.router.navigateByUrl('')})).
     catch((error)=> {var errorCode=error.code; var errorMessage=error.message;})
     }
-  userDbCreated(){
-    this.autService.userGroupsCreated()
-  }
+
 }
