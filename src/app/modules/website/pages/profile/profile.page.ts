@@ -14,11 +14,12 @@ export class ProfilePage implements OnInit {
 
   name: any = "Ad"
   surname: any = "Soyad"
-  school: any = "Okulu"
+  //school: any = "Okulu"
   class: any = ""
 
-  pPhoto = false
+  pPhoto = true
   picturePath: any
+  picturePath2: any
   uploadBar = false
   uploadData: any
   uploadPercent: Observable<number>;
@@ -27,8 +28,7 @@ export class ProfilePage implements OnInit {
   constructor(private ps: ProfileServiceService, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
   ngOnInit(): void {
-    this.setProfileInfos();
-    this.ps.getInfos();
+    this.setProfileInfos();    
   }
 
   async setProfileInfos() {
@@ -49,10 +49,6 @@ export class ProfilePage implements OnInit {
     alert("Yakında Sizlerle... :D")
   }
 
-  getProfilePhoto() {
-    return this.picturePath;
-  }
-
   async upload(event: any) {
     const file = event.target.files[0];
     const fileName = "/users/" + await this.ps.getCurrentUid() + "/profilePicture/" + file.name;
@@ -69,13 +65,14 @@ export class ProfilePage implements OnInit {
   setProfilePhoto() {
     this.pPhoto = true;
     this.uploadBar = false;
+    this.picturePath2 = this.picturePath;
   }
 
   logOut() {
     this.pPhoto = false;
     this.name = "Ad";
     this.surname = "Soyad";
-    this.school = "Okulu";
+    //this.school = "Okulu";
     this.class = "";
     this.aut.signOut();
     alert("Çıkış Yapıldı.")
