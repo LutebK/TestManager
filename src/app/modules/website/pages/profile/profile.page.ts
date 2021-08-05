@@ -28,7 +28,7 @@ export class ProfilePage implements OnInit {
 
   ngOnInit(): void {
     this.setProfileInfos();
-    console.log(this.ps.getProfilePictureUrl());
+    this.ps.getInfos();
   }
 
   async setProfileInfos() {

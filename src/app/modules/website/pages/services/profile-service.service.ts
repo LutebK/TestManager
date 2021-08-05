@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +12,10 @@ export class ProfileServiceService {
 
   async getCurrentUid() {
     return (await this.aut.currentUser).uid
+  }
+
+  getInfos() {
+    return this.getProfileInfos().then(t => t.subscribe((s: any) => console.log(s.data())))
   }
 
   async getProfileInfos() {
