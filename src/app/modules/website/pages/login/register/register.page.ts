@@ -13,6 +13,7 @@ export class RegisterPage implements OnInit {
   name: String;
   emaiL: any;
   passworD: any;
+  count:number=0;
   constructor(private afs:AngularFireAuth, private autService:AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
@@ -21,11 +22,12 @@ export class RegisterPage implements OnInit {
   userCreated(){
     let signUp:LoginInformation={email:this.emaiL,password:this.passworD}
     this.afs.createUserWithEmailAndPassword(signUp.email,signUp.password)
-    .then((userCredential=> {var user = userCredential.user; console.log("oluşturuldu"); this.setUserName() ;this.router.navigateByUrl('')})).
+    .then((userCredential=> {var user = userCredential.user; console.log("oluşturuldu"); this.setUserName() ; this.router.navigateByUrl('/website')})).
     catch((error)=> {var errorCode=error.code; var errorMessage=error.message;})
     }
   setUserName(){
-    this.autService.getRegisterName(this.name)
+    this.autService.getRegisterName(this.name,this.count)
+    this.count++
     console.log(this.name)
   }
 }

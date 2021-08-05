@@ -25,8 +25,9 @@ export class RootPage implements OnInit {
 
   ngOnInit(): void {
 
+    if(this.authService.count==0)
+      this.userDbCreated()
 
-    this.userDbCreated()
 
   }
 
@@ -58,5 +59,6 @@ export class RootPage implements OnInit {
   }
   async userDbCreated(){
     this.authService.userIdDbCreate()
+
   }
 }
