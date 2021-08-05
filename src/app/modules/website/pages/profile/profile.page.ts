@@ -19,7 +19,6 @@ export class ProfilePage implements OnInit {
 
   pPhoto = true
   picturePath: any
-  picturePath2: any
   uploadBar = false
   uploadData: any
   uploadPercent: Observable<number>;
@@ -28,7 +27,7 @@ export class ProfilePage implements OnInit {
   constructor(private ps: ProfileServiceService, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
   ngOnInit(): void {
-    this.setProfileInfos();    
+    this.setProfileInfos();
   }
 
   async setProfileInfos() {
@@ -37,7 +36,6 @@ export class ProfilePage implements OnInit {
         this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class, this.picturePath = s.data().picture
       })
     });
-    this.picturePath == null ? this.pPhoto = true : this.pPhoto = false;
   }
 
   saveChanges() {
@@ -65,7 +63,6 @@ export class ProfilePage implements OnInit {
   setProfilePhoto() {
     this.pPhoto = true;
     this.uploadBar = false;
-    this.picturePath2 = this.picturePath;
   }
 
   logOut() {
