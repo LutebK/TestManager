@@ -1,7 +1,7 @@
 export class UserInformation {
-  userName?:String;
-  userClass?:number;
-  userPicture?:String;
+  name?:String;
+  class?:String;
+  picture?:String;
 }
 export class UserDocument{
 

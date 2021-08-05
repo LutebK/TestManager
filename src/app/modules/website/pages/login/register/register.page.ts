@@ -21,8 +21,11 @@ export class RegisterPage implements OnInit {
   userCreated(){
     let signUp:LoginInformation={email:this.emaiL,password:this.passworD}
     this.afs.createUserWithEmailAndPassword(signUp.email,signUp.password)
-    .then((userCredential=> {var user = userCredential.user; console.log("oluşturuldu") ;this.router.navigateByUrl('')})).
+    .then((userCredential=> {var user = userCredential.user; console.log("oluşturuldu"); this.setUserName() ;this.router.navigateByUrl('')})).
     catch((error)=> {var errorCode=error.code; var errorMessage=error.message;})
     }
-
+  setUserName(){
+    this.autService.getRegisterName(this.name)
+    console.log(this.name)
+  }
 }

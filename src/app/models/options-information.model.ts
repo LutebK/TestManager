@@ -2,7 +2,7 @@ export class OptionsInformation {
   PasswordChange?:String;
   Premium?:Boolean;
   Class?:number;
-  invite:String;
+  invite?:String;
 }
 export class OptionsDocument{
 

@@ -24,7 +24,10 @@ export class RootPage implements OnInit {
   constructor(private router: Router,private aut:AngularFireAuth, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+
+
     this.userDbCreated()
+
   }
 
   setPath() {
