@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   email:any;
   password:any;
 
-  constructor(private afs:AngularFireAuth, private router:Router,private userId:AuthenticationService) {
+  constructor(private afs:AngularFireAuth, private router:Router,private as:AuthenticationService) {
 
   }
 
@@ -32,6 +32,8 @@ export class LoginPage implements OnInit {
       error=> {this.signControl=false,alert(error)})
 
   }
+
+
 
 
   }

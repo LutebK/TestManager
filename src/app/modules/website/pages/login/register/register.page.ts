@@ -30,4 +30,12 @@ export class RegisterPage implements OnInit {
     this.count++
     console.log(this.name)
   }
+
+  signViaGoogle() {
+    this.autService.signViaGoogle().catch(c => alert(c.message));
+  }
+
+  signViaFacebook() {
+    this.autService.signViaFacebook().catch(c => alert(c.message));
+  }
 }

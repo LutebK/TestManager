@@ -9,6 +9,8 @@ import { FirebaseApp } from '@angular/fire';
 import { LoginInformation } from '../models/login-information.model';
 import { OptionsInformation } from '../models/options-information.model';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { GroupsInformation } from '../models/groups-information.model';
+import firebase from 'firebase';
 
 
 
@@ -39,14 +41,16 @@ export class AuthenticationService {
   async userIdDbCreate() {
     this.b = (await this.auth.currentUser).uid
     let profileInfo: UserInformation = { name: this.name, class: "", picture: "https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FdefaultUserPicture%2Fsimge%20(1).png?alt=media&token=a6a1f1d0-d4b5-423b-8e91-48fea20e4e71" }
-    let optionInfo: OptionsInformation = { PasswordChange: "", Premium: false, Class: "", invite: this.inviteCodeGenerate() }
-    let savedInfo: SavedInformation = { Question: "link" }
-    let statsInfo: StaticsInformation = { result: 5, lessonName: "türkçe", answer: "a,b,c" }
-    //await this.firestore.collection('/users').doc(this.b).collection('/user').doc('/userInfo').set(a)
+    let optionInfo: OptionsInformation = { PasswordChange: "", Premium: false, Class: "", invite: this.inviteCodeGenerate() };
+    let savedInfo: SavedInformation = { Question: "link" };
+    let statsInfo: StaticsInformation = { result: 5, lessonName: "türkçe", answer: "a,b,c" };
+    let groupsInfo: GroupsInformation = { userName: this.name, imgName: "" };
+
+    //await this.firestore.collection('/users').doc(this.b).collection('/groups').doc('/groupsAdded').set();
     await this.firestore.collection('/users').doc(this.b).collection('/profile').doc('/profileInfo').set(profileInfo)
     await this.firestore.collection('/users').doc(this.b).collection('/options').doc('/optionInfo').set(optionInfo)
-    // await this.firestore.collection('/users').doc(this.b).collection('/saved').doc('/savedInfo').set(savedInfo)
-    // await this.firestore.collection('/users').doc(this.b).collection('/stats').doc('/statsInfo').set(statsInfo)
+    await this.firestore.collection('/users').doc(this.b).collection('/saved').doc('/savedInfo').set(savedInfo)
+    await this.firestore.collection('/users').doc(this.b).collection('/stats').doc('/statsInfo').set(statsInfo)
     console.log(this.name)
   }
   async getRegisterName(inputRegisterName: String,counts:number) {
@@ -65,6 +69,11 @@ export class AuthenticationService {
 
   }
 
+  async signViaGoogle() {
+    await this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
 
-
+  async signViaFacebook() {
+    await this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
 }
