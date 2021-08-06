@@ -5,7 +5,7 @@
 
                 <button class="navbtn"
                     style="height: 48px; text-align: center; border: none; position: absolute; width: 48px; font-size: 28px; border: none; background-color: #2980B9;"
-                    (click)="setPath()">
+                    (click)="setPath();getNavBarImg()">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div style="text-align: center; color: white; margin-right: -24px; ">
@@ -37,17 +37,17 @@
         </header>
     </div>
     <div *ngIf="mainMenuPath2">
-        <header class="row" style="background-color: #34495E;">
+        <header class="row" style="background-color: #495963;">
             <div class="col-12" style="padding-top: 15px; ">
                 <div style="display: inline-block; width: 100%; text-align: center;">
-                    <div class="userImg" style="text-align: center; font-size: 35px; padding-top: 7px; ; float: left;" >
+                    <div class="userImg" style="text-align: center; font-size: 35px; padding-top: 7px; ; float: left; border: 1px #e8e8f1 solid;" >
                         <img src={{imgUrl}} style="width: 100%; height: 108%;  border-radius: 50%; position: relative; top: -9%;">
                     </div>
                     <span
                         style="text-align: center; width: auto; margin-top: 7px; margin-right: 5px; height: auto; font-size: 24px; display: inherit; font-size: 24px; color: #E0D7D7;">{{userName}}
                     </span>
                     <button class="navbtn"
-                        style="width: 40px; height: 40px; font-size: 30px; padding-top: 2px; float: right; background-color: #34495E; border: none; " (click)="setPath()">
+                        style="width: 40px; height: 40px; font-size: 30px; padding-top: 2px; float: right; background-color: #495963; border: none; " (click)="setPath()">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -55,7 +55,7 @@
         </header>
     </div>
     <nav *ngIf="mainMenuPath2"  class="navmenu" >
-        <div style="height: 100%; width: 100%; position: fixed; background-color: #34495E; padding-top: 100px; text-align: start; margin-left: -12px;">
+        <div style="height: 100%; width: 100%; position: fixed; background-color: #495963; padding-top: 100px; text-align: start; margin-left: -12px; transition: 10 all;">
             <button [routerLink]="['/website']"  (click)="setPath()">
                 <i class="fas fa-home" ></i>
                 <span>Anasayfa</span>

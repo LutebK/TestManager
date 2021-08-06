@@ -1,7 +1,10 @@
 export class StaticsInformation {
-  result?:number;
   lessonName?:String;
-  answer?:String;
+  topicName?:String;
+  testId?:String;
+  trueQ?:number;
+  falseQ?:number;
+  emptyQ?:number;
 }
 export class StatsDocument{
 

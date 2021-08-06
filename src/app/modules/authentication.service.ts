@@ -42,8 +42,8 @@ export class AuthenticationService {
     this.b = (await this.auth.currentUser).uid
     let profileInfo: UserInformation = { name: this.name, class: "", picture: "https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FdefaultUserPicture%2Fsimge%20(1).png?alt=media&token=a6a1f1d0-d4b5-423b-8e91-48fea20e4e71" }
     let optionInfo: OptionsInformation = { PasswordChange: "", Premium: false, Class: "", invite: this.inviteCodeGenerate() };
-    let savedInfo: SavedInformation = { Question: "link" };
-    let statsInfo: StaticsInformation = { result: 5, lessonName: "türkçe", answer: "a,b,c" };
+    let savedInfo: SavedInformation = { Question: "link"};
+    let statsInfo: StaticsInformation = { lessonName: "türkçe",topicName:"Sözcükte-Anlam", trueQ:5,falseQ:4,emptyQ:0};
     let groupsInfo: GroupsInformation = { userName: this.name, imgName: "" };
 
     //await this.firestore.collection('/users').doc(this.b).collection('/groups').doc('/groupsAdded').set();

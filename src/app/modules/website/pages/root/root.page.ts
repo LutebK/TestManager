@@ -35,7 +35,7 @@ export class RootPage implements OnInit {
     //this.profileService.getProfileNavBarImg().then(a=> {a.subscribe((b:any)=> {console.log(this.imgUrl = b.data().picture)})})
     this.userName=this.authService.name
     //this.abc()
-    this.getNavBarImg()
+
 
   }
 
