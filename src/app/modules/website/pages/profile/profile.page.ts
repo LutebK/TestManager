@@ -36,27 +36,37 @@ export class ProfilePage implements OnInit {
         this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class, this.picturePath = s.data().picture
       })
     });
+
+    this.picturePath ? this.pPhoto = false : this.pPhoto = true;
   }
 
   saveChanges() {
-    let data: string[] = [this.name, this.surname, this.class, this.picturePath];
-    this.ps.setProfileInfos(data).then(t => { alert("Değişiklikler Kaydedildi.") });
+    if (!this.name || !this.surname) {
+      alert("İsim Soyisim boş bırakılamaz!");
+    }
+    else if (!this.class) {
+      alert("Sınıf boş bırakılamaz!");
+    }
+    else {
+      let data: string[] = [this.name, this.surname, this.class, this.picturePath];
+      this.ps.setProfileInfos(data).then(t => { alert("Değişiklikler Kaydedildi.") });
+    }
   }
 
   takeProfilePhoto() {
     alert("Yakında Sizlerle... :D");
-    console.log(this.ps.getProfilePictureUrl("webbg.jpg"));
+    //this.ps.getProfilePictureUrl().then(t => t.subscribe(s => { this.downloadURL = s }));
   }
 
   async upload(event: any) {
     const file = event.target.files[0];
-    const fileName = "/users/" + await this.ps.getCurrentUid() + "/profilePicture/" + file.name;
+    const fileName = "/users/" + await this.ps.getCurrentUid() + "/profilePicture/profileImg";
     const ref = this.storage.ref(fileName);
     const task = ref.put(file);
 
     this.uploadBar = true;
     this.uploadPercent = task.percentageChanges();
-    this.uploadPercent.subscribe(s => this.uploadData = s);
+    this.uploadPercent.subscribe(s => this.uploadData = s.toFixed());
 
     task.snapshotChanges().pipe(finalize(() => ref.getDownloadURL().subscribe(s => this.picturePath = s))).subscribe()
   }

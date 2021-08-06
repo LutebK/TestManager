@@ -7,7 +7,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
   providedIn: 'root'
 })
 export class ProfileServiceService {
- 
+  
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
   async getCurrentUid() {
@@ -26,10 +26,9 @@ export class ProfileServiceService {
     await this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/profile/profileInfo").update({ name: data[0], surname: data[1], class: data[2], picture: data[3] });
   }
 
-  async getProfilePictureUrl(fileName: string) {
-    let url = ""
-    this.storage.ref("users/" + (await this.getCurrentUid()).toString() + "/profilePicture/" + fileName).getDownloadURL().subscribe(s => url = s);
-    return url;
+  async getProfilePictureUrl() {
+    return await this.storage.ref("users/" + (await this.getCurrentUid()).toString() + "/profilePicture/profileImg").getDownloadURL();
+    // return await this.storage.ref("/5.Sınıf/Türkçe/Cümlede Anlam/Test 1/Soru 1.png").getDownloadURL();
   }
 
   async updateProfilePicturePath(path: string) {
