@@ -22,7 +22,7 @@ export class ProfilePage implements OnInit {
   uploadBar = false
   uploadData: any
   uploadPercent: Observable<number>;
-  downloadURL: Observable<string>;
+  downloadURL: any;
 
   constructor(private ps: ProfileServiceService, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
@@ -44,7 +44,8 @@ export class ProfilePage implements OnInit {
   }
 
   takeProfilePhoto() {
-    alert("Yakında Sizlerle... :D")
+    alert("Yakında Sizlerle... :D");
+    console.log(this.ps.getProfilePictureUrl("webbg.jpg"));
   }
 
   async upload(event: any) {
@@ -63,6 +64,7 @@ export class ProfilePage implements OnInit {
   setProfilePhoto() {
     this.pPhoto = true;
     this.uploadBar = false;
+    this.ps.updateProfilePicturePath(this.picturePath);
   }
 
   logOut() {
