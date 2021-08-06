@@ -70,7 +70,7 @@ export class RootPage implements OnInit {
 
   }
   async getNavBarImg(){
-    this.profileService.getProfileInfos().then(a=> {a.subscribe((b:any)=> {this.imgUrl=b.data().picture,this.userName=b.data().name})})
+    this.profileService.getProfileInfos().then(a=> {a.subscribe((b:any)=> {this.imgUrl=b.data().picture,this.userName=b.data().name+ b.data().surname} )})
   }
 
   // async abc(){
