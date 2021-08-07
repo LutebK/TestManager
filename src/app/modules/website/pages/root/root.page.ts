@@ -73,8 +73,5 @@ export class RootPage implements OnInit {
     this.profileService.getProfileInfos().then(a=> {a.subscribe((b:any)=> {this.imgUrl=b.data().picture,this.userName=b.data().name+ b.data().surname} )})
   }
 
-  // async abc(){
-  //  this.storage.ref('/users/'+ (await this.aut.currentUser).uid+"/profilePicture/"+await this.profileService.imgNameP).getDownloadURL().subscribe(a=> {console.log(a)})
-  // }
 
 }

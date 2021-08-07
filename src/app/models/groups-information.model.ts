@@ -1,6 +1,6 @@
 export class GroupsInformation {
-  userName?: String;
-  imgName?: String;
+  userName?: any;
+  imgName?: any;
 }
 export class GroupsDocument{
 

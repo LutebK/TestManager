@@ -21,6 +21,12 @@ export class GroupsServiceService {
   async users(){
     return await this.firestore.collection("/users/").get()
   }
+
+  async deneme(){
+    return await this.firestore.collectionGroup("options",ref=> ref.where("invite","==",this.inviteCodeGet1)).get()
+  }
+
+
   async userInviteCode(){
     return await this.firestore.doc("/users/"+ (await this.aut.currentUser).uid+"/options/optionInfo").get()
   }
@@ -39,7 +45,7 @@ export class GroupsServiceService {
     this.inviteCodeGet1=code
   }
   async userAdd(id: GroupsInformation){
-    return await this.firestore.collection('/users/').doc((await this.aut.currentUser).uid).collection('/groups/').doc('userAdded').set(id)
+    return await this.firestore.collection('/users/').doc((await this.aut.currentUser).uid).collection('/groups/').doc('userAdded').update(id)
 }
   async getPicture(){
     return await this.firestore.collection('/users/'+ (await this.aut.currentUser).uid+'profile/profileInfo').get()
