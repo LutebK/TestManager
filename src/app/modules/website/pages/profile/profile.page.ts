@@ -24,39 +24,46 @@ export class ProfilePage implements OnInit {
   uploadPercent: Observable<number>;
   downloadURL: any;
 
+  sArray: any[] = [];
+  sIdx: number = -1;
+
   constructor(private ps: ProfileServiceService, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
   ngOnInit(): void {
     this.setProfileInfos();
   }
 
-  async setProfileInfos() {
+  setProfileInfos() {
     this.ps.getProfileInfos().then(t => {
       t.subscribe((s: any) => {
         this.name = s.data().name, this.surname = s.data().surname, this.class = s.data().class, this.picturePath = s.data().picture
       })
     });
 
+    this.ps.getSavedQuestions().then(t => t.subscribe(s => { this.sArray.push(s.data()) }));
+
     this.picturePath ? this.pPhoto = false : this.pPhoto = true;
   }
 
   saveChanges() {
-    if (!this.name || !this.surname) {
+    if (!this.name || !this.surname)
       alert("İsim Soyisim boş bırakılamaz!");
-    }
-    else if (!this.class) {
+    else if (!this.class)
       alert("Sınıf boş bırakılamaz!");
-    }
-    else {
+    else { 
       let data: string[] = [this.name, this.surname, this.class, this.picturePath];
       this.ps.setProfileInfos(data).then(t => { alert("Değişiklikler Kaydedildi.") });
     }
   }
 
   takeProfilePhoto() {
-    alert("Yakında Sizlerle... :D");
+    this.ps.addSavedQ("afdaa");
+    //this.ps.asdas().then(t => t.subscribe(s => console.log(s)));
+    //alert("Yakında Sizlerle... :D");
     //this.ps.getProfilePictureUrl().then(t => t.subscribe(s => { this.downloadURL = s }));
   }
+
+  
 
   async upload(event: any) {
     const file = event.target.files[0];

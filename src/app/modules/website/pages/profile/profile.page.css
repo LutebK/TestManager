@@ -22,6 +22,10 @@ span {
   margin-bottom: 2%;
 }
 
+.savedQ {
+    width: calc(100% - 50px);    
+}
+
 .exit {
   width: 165px;
   height: 37px;

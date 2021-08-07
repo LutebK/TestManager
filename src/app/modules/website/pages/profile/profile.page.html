@@ -5,12 +5,12 @@
       <div class="circle">
         <div class="user center-white">
           <i *ngIf=!pPhoto class="far fa-user"></i>
-          <img *ngIf=pPhoto src="{{picturePath}}" alt="">
+          <img *ngIf=pPhoto src="{{picturePath}}" alt="profilePicture">
         </div>
       </div>
     </div>
-  </div>  
-  
+  </div>
+
   <div class="row">
 
     <div class="col-6">
@@ -55,7 +55,7 @@
 
   <div class="row">
     <div class="col-12">
-      <button class="bg save center-white">
+      <button class="bg save center-white" data-bs-toggle="modal" data-bs-target="#savedModal">
         <i class="far fa-bookmark"></i>
         Kaydettiklerim
       </button>
@@ -71,15 +71,13 @@
     </div>
   </div>
 
-
-
 </div>
 
 
 
 <!-- Modals -->
 <div class="modal fade" id="editProfile" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-  aria-hidden="true">
+     aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -92,13 +90,13 @@
           <div class="input-group mb-3">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">İsim</span>
             <input type="text" class="form-control bg-dark text-white" [(ngModel)]="name"
-              aria-describedby="basic-addon1">
+                   aria-describedby="basic-addon1">
           </div>
 
           <div class="input-group mb-3">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">Soyisim</span>
             <input type="text" class="form-control bg-dark text-white" [(ngModel)]="surname"
-              aria-describedby="basic-addon1">
+                   aria-describedby="basic-addon1">
           </div>
           <!--<div class="input-group mb-3">
             <span class="input-group-text bg-dark text-white" id="basic-addon1">Okul</span>
@@ -130,7 +128,7 @@
 
 
 <div class="modal fade" id="logoutModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-  aria-hidden="true">
+     aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -142,7 +140,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logOut()"
-          [routerLink]="['']">Evet</button>
+                [routerLink]="['']">
+          Evet
+        </button>
         <button type="button" class="btn btn-success" data-bs-dismiss="modal">Hayır</button>
       </div>
     </div>
@@ -150,7 +150,7 @@
 </div>
 
 <div class="modal fade" id="editPhoto" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-  aria-hidden="true">
+     aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
@@ -187,6 +187,32 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>
         <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="setProfilePhoto()">Kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="savedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kaydettiklerim</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div *ngFor="let i of sArray;">
+          <div *ngFor="let j of i.questionNo;">
+            <div style="border: 2px #9ba2b0 solid; border-radius: 10px; margin-bottom: 3%; padding: 2%; ">
+              Soru: {{j}}
+              <button class="mt-1" [routerLink]="[i.questionLink[j-1]]" data-bs-dismiss="modal">
+                <img class="savedQ" src="{{i.questionUrl[j-1]}}" alt="savedPicture" />
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

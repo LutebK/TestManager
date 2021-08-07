@@ -35,4 +35,16 @@ export class ProfileServiceService {
     await this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/profile/profileInfo").update({ picture: path });
   }
 
+  async getSavedQuestions() {
+    return await this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/saved/savedInfo").get();
+  }
+
+  async addSavedQ(data: string) {
+    this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/saved/savedInfo").update({ "question": data });
+  }
+
+  async asdas() {
+    return await this.afs.collection("users/").get();
+  }
+
 }
