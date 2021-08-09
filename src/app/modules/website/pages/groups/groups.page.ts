@@ -14,62 +14,51 @@ export class GroupsPage implements OnInit {
 
 
   btnUserEdit: boolean = true;
-
   array: any[] = []
-  userList: any[] = []
-  invateId: any[] = []
-  inviteCode: any;
-  inviteCodeControl: any;
+  inviteId: any[] = []
   userInviteInput: any;
-  name: any="";
-  picture: any="";
+  users: any[] = [];
+  userPath: any = "";
+  name: any = "";
+  picture: any = "";
+
   constructor(private service: GroupsServiceService) { }
 
   ngOnInit(): void {
-    this.userDbList()
-    //this.service.getPicture()
-    this.users()
-
-    //this.userInvite()
-  }
-  async users() {
-    return this.service.users().then(a => { a.subscribe(b => { b.forEach(c => { this.userList.push(c.id) }) }) })
-  }
-  async userInvite() {
-    return this.service.userInviteCode().then(a => { a.subscribe((b: any) => this.inviteCode = b.data().invite) })
+    this.service.usersGetInfo().then(a=> {a.subscribe(b=> {b.forEach((c:any)=> { this.users.push({ name : c.data().userName ,  img:c.data().imgName  })})})})
+    console.log(this.service.userPath)
+    console.log(this.users)
   }
 
-  async getUser() {
-    return this.service.userGet().then(a => { a.subscribe(b => { b.data() }) })
+  async getInviteCode() {
+    return this.service.userİnviteCode().then(a => { a.get().subscribe(b => b.forEach((c: any) => this.inviteId.push(c.data().invite))) })
   }
 
   async userAdded() {
-    await this.userList.forEach(user => {
-      console.log(user)
-      this.service.userInviteCode2(user).then(a => {
-        a.subscribe((b: any) => {
-          if (this.userInviteInput == b.data().invite) {
-            console.log("girdi")
-            console.log("usergirdi" + this.userInviteInput)
-            this.service.inviteCodeGet(this.userInviteInput)
-            this.service.deneme().then(a=> {a.subscribe(b=> {b.forEach(c=> {console.log(c.ref.path)})})})
-            this.service.userGet().then(a => { a.subscribe((b: any) => {this.name = b.data().name, this.picture = b.data().picture }) })
-            console.log("thisname "+this.name+ "\n" +"thispicture "+ this.picture )
-            let useradd: GroupsInformation = { userName: this.name, imgName: this.picture }
-            this.service.userAdd(useradd)
-          }
-        })
-      })
+    this.getInviteCode()
+    this.inviteId.forEach(id => {
+      console.log(id)
+      if (this.userInviteInput == id) {
+        console.log("girdi")
+        this.service.getGroupsTsID(id)
+        this.service.findUserPath().then(a => {
+          a.subscribe(a => {
+            a.forEach(b => {
+              this.userPath = b.ref.path.substring(6, 34), this.service.sendUserPath(b.ref.path.substring(6, 34)),
+              this.service.user().then(a => { a.subscribe((b: any) => { let user:GroupsInformation = { userName: b.data().name, imgName: b.data().picture };this.service.usersAdded(user)})})
 
 
+            })
+          })
+        }
+        )
+      }
     });
-
   }
+
 
   btnUserEditM() {
     this.btnUserEdit = !this.btnUserEdit;
   }
-  async userDbList() {
-    return this.service.userGets().then(a => { a.subscribe(b => { b.forEach(c => { this.array.push({ id: c.id, data: c.data() }) }) }) })
-  }
+
 }
