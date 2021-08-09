@@ -40,7 +40,7 @@ export class ProfilePage implements OnInit {
       })
     });
 
-    this.ps.getSavedQuestions().then(t => t.subscribe(s => { this.sArray.push(s.data()) }));
+    this.ps.getSavedQuestions().then(t => t.subscribe(s => { s.forEach(f => { this.sArray.push({ data: f.data(), id: f.id }) }) }));
 
     this.picturePath ? this.pPhoto = false : this.pPhoto = true;
   }
@@ -50,20 +50,22 @@ export class ProfilePage implements OnInit {
       alert("İsim Soyisim boş bırakılamaz!");
     else if (!this.class)
       alert("Sınıf boş bırakılamaz!");
-    else { 
+    else {
       let data: string[] = [this.name, this.surname, this.class, this.picturePath];
       this.ps.setProfileInfos(data).then(t => { alert("Değişiklikler Kaydedildi.") });
     }
   }
 
   takeProfilePhoto() {
-    this.ps.addSavedQ("afdaa");
-    //this.ps.asdas().then(t => t.subscribe(s => console.log(s)));
-    //alert("Yakında Sizlerle... :D");
-    //this.ps.getProfilePictureUrl().then(t => t.subscribe(s => { this.downloadURL = s }));
+    alert("Yakında Sizlerle... :D");
   }
 
-  
+  deleteSQ(id: string) {
+    this.ps.deleteSavedQuestion(id);
+    this.sArray = [];
+    this.ps.getSavedQuestions().then(t => t.subscribe(s => { s.forEach(f => { this.sArray.push({ data: f.data(), id: f.id }) }) }));
+  }
+
 
   async upload(event: any) {
     const file = event.target.files[0];

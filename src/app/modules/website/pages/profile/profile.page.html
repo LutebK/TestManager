@@ -203,13 +203,18 @@
       <div class="modal-body">
 
         <div *ngFor="let i of sArray;">
-          <div *ngFor="let j of i.questionNo;">
-            <div style="border: 2px #9ba2b0 solid; border-radius: 10px; margin-bottom: 3%; padding: 2%; ">
-              Soru: {{j}}
-              <button class="mt-1" [routerLink]="[i.questionLink[j-1]]" data-bs-dismiss="modal">
-                <img class="savedQ" src="{{i.questionUrl[j-1]}}" alt="savedPicture" />
-              </button>
+          <div style="border: 2px #9ba2b0 solid; border-radius: 10px; margin-bottom: 5%; padding: 2%; ">
+            <div class="row">
+              <div class="col-10 pl-3">
+                {{i.data.questionLoc}} Soru: {{i.data.questionNo}}
+              </div>
+              <div class="col-2 text-end">
+                <button type="button" class="btn-close btn-close-white" (click)="deleteSQ(i.id)"></button>
+              </div>
             </div>
+            <button class="mt-1" [routerLink]="[i.data.questionLink]" data-bs-dismiss="modal">
+              <img class="savedQ" src="{{i.data.qPictureUrl}}" alt="savedPicture" />
+            </button>
           </div>
         </div>
 
