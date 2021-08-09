@@ -5,8 +5,32 @@ import { Component, OnInit } from '@angular/core';
 import { GroupsServiceService } from '../services/groups-service.service';
 import { isThisSecond } from 'date-fns';
 import { timeoutWith } from 'rxjs/operators';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 @Component({
   selector: 'website-groups',
+  animations:[
+    trigger('btnUserEdit',[
+      state('open',style({
+        position: 'absolute',
+        bottom: '32px',
+        right: '32px',
+        height: '7%',
+        width: '50px',
+        textAlign: 'center'
+
+      })),
+      state('close',style({
+        width: '170px',
+        display: 'flex'
+      })),
+      transition('open => close',[
+        animate('0.3s')
+      ]),
+      transition('close => open',[
+        animate('0.3s')
+      ])
+    ])
+  ],
   templateUrl: './groups.page.html',
   styleUrls: ['./groups.page.css']
 })
@@ -25,7 +49,7 @@ export class GroupsPage implements OnInit {
   constructor(private service: GroupsServiceService) { }
 
   ngOnInit(): void {
-    this.service.usersGetInfo().then(a=> {a.subscribe(b=> {b.forEach((c:any)=> { this.users.push({ name : c.data().userName ,  img:c.data().imgName  })})})})
+    this.service.usersGetInfo().then(a => { a.subscribe(b => { b.forEach((c: any) => { this.users.push({ name: c.data().userName, img: c.data().imgName }) }) }) })
     console.log(this.service.userPath)
     console.log(this.users)
   }
@@ -45,9 +69,7 @@ export class GroupsPage implements OnInit {
           a.subscribe(a => {
             a.forEach(b => {
               this.userPath = b.ref.path.substring(6, 34), this.service.sendUserPath(b.ref.path.substring(6, 34)),
-              this.service.user().then(a => { a.subscribe((b: any) => { let user:GroupsInformation = { userName: b.data().name, imgName: b.data().picture };this.service.usersAdded(user)})})
-
-
+              this.service.user().then(a => { a.subscribe((b: any) => { let user: GroupsInformation = { userName: b.data().name, imgName: b.data().picture }; this.service.usersAdded(user) }) })
             })
           })
         }

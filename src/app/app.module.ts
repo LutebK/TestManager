@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAuthGuardModule} from '@angular/fire/auth-guard'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
 
@@ -27,7 +28,8 @@ import { AngularFireAuthGuardModule} from '@angular/fire/auth-guard'
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireAuthGuardModule
+    AngularFireAuthGuardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [RootPage]
