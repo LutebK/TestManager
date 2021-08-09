@@ -7,7 +7,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
   providedIn: 'root'
 })
 export class ProfileServiceService {
-  
+
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
   async getCurrentUid() {
@@ -28,7 +28,6 @@ export class ProfileServiceService {
 
   async getProfilePictureUrl() {
     return await this.storage.ref("users/" + (await this.getCurrentUid()).toString() + "/profilePicture/profileImg").getDownloadURL();
-    // return await this.storage.ref("/5.Sınıf/Türkçe/Cümlede Anlam/Test 1/Soru 1.png").getDownloadURL();
   }
 
   async updateProfilePicturePath(path: string) {
@@ -36,15 +35,15 @@ export class ProfileServiceService {
   }
 
   async getSavedQuestions() {
-    return await this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/saved/savedInfo").get();
+    return await this.afs.collection("users/" + (await this.getCurrentUid()).toString() + "/saved").get();
   }
 
-  async addSavedQ(data: string) {
-    this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/saved/savedInfo").update({ "question": data });
+  async addSavedQuestion(qpictureurl: string, qlink: string, qno: string, qloc: string) {
+    this.afs.collection("users/" + (await this.getCurrentUid()).toString() + "/saved").add({ questionLoc: qloc, qPictureUrl: qpictureurl, questionLink: qlink, questionNo: qno });
   }
 
-  async asdas() {
-    return await this.afs.collection("users/").get();
+  async deleteSavedQuestion(id: string) {
+    this.afs.doc("users/" + (await this.getCurrentUid()).toString() + "/saved/" + id).delete()
   }
 
 }
