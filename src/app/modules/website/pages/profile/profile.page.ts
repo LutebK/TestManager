@@ -77,12 +77,13 @@ export class ProfilePage implements OnInit {
     this.uploadPercent = task.percentageChanges();
     this.uploadPercent.subscribe(s => this.uploadData = s.toFixed());
 
-    task.snapshotChanges().pipe(finalize(() => ref.getDownloadURL().subscribe(s => this.picturePath = s))).subscribe()
+    task.snapshotChanges().pipe(finalize(() => ref.getDownloadURL().subscribe(s => this.downloadURL = s))).subscribe()
   }
 
   setProfilePhoto() {
     this.pPhoto = true;
     this.uploadBar = false;
+    this.picturePath = this.downloadURL;
     this.ps.updateProfilePicturePath(this.picturePath);
   }
 
