@@ -1,81 +1,102 @@
 <div class="row userselect">
-    <div style="height: 100%; width: 100%; position: fixed; background-color: #e2e6eb;  padding: 0px;  ">
-        <div class="col-12" style="width: 100%;">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-user-tab" data-bs-toggle="pill" data-bs-target="#pills-user" type="button" role="tab" aria-controls="pills-user" aria-selected="true" >
-                        <i class="fas fa-user"></i>
-                        Kisiler
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-users-tab" data-bs-toggle="pill" data-bs-target="#pills-users" type="button" role="tab" aria-controls="pills-users" aria-selected="false">
-                        <i class="fas fa-users"></i>
-                        Gruplar
-                    </button>
-                </li>
-              </ul>
-              <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
-                    <div class="row chat" >
-                        <div *ngFor="let i of users">
-                           <button style="height: 40px; width: 100%; ;">
-                                <!-- <i class="fas fa-user" style="margin-right: 25px;"></i> -->
-                                <img  width="35" height="35" src={{i.img}} >
-                                <span >{{i.name}}</span>
-                           </button>
-                        </div>
-                    </div>
+  <div style="height: 100%; width: 100%; position: fixed; background-color: #e2e6eb;  padding: 0px;  ">
+    <div class="col-12" style="width: 100%;">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-user-tab" data-bs-toggle="pill" data-bs-target="#pills-user"
+            type="button" role="tab" aria-controls="pills-user" aria-selected="true">
+            <i class="fas fa-user"></i>
+            Kisiler
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-users-tab" data-bs-toggle="pill" data-bs-target="#pills-users"
+            type="button" role="tab" aria-controls="pills-users" aria-selected="false">
+            <i class="fas fa-users"></i>
+            Gruplar
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
+          <div class="row chat">
+            <div *ngFor="let i of users">
+              <button style="height: 40px; width: 100%; ;" (click)="userMessageDivActive();userMessageSendGetId(i.id)" >
+                <!-- <i class="fas fa-user" style="margin-right: 25px;"></i> -->
+                <img width="35" height="35" src={{i.img}}>
+                <span>{{i.name}}</span>
+                <div *ngIf="btnUserDelete" style="position: relative; right: 8px; top: -36px; text-align: right;">
+                  <button class="btn-close" style="width: auto; font-size: 30px;" (click)="userDelete(i.id)">
+                  </button>
                 </div>
-                <div class="tab-pane fade" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
-                    <div class="row chat2" >
-                        <div >
-                           <button style="height: 40px; width: 100%;">
-                                <i class="fas fa-users" style="margin-right: 25px;"></i>
-                                <span ></span>
-                           </button>
-                        </div>
-                    </div>
-                </div>
-
-              </div>
+              </button>
+            </div>
+          </div>
         </div>
+        <div class="tab-pane fade" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
+          <div class="row chat2">
+            <div>
+              <button style="height: 40px; width: 100%;">
+                <i class="fas fa-users" style="margin-right: 25px;"></i>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>
 
-<button class="btn btn-primary btnUserEdits"  id="userPlusBtn" type="button" (click)="btnUserEditM()" [@btnUserEdit]="btnUserEdit ? 'open': 'close'  ">
-    <div *ngIf="!btnUserEdit" >
-        <div style="width: 100%; padding-top: 3px;  padding-right: 79px; z-index: 999px;">
-          <button   data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="color: #e2e6eb; border: none; background-color: #0275d8;">
-              <i class="fas fa-user-plus "></i>
-          </button>
-        </div>
-        <div style="width: 100%; margin-top: -27px; margin-left: 11px; ">
-            <i class="fas fa-user-minus"></i>
-        </div>
+<button class="btn btn-primary btnUserEdits" id="userPlusBtn" type="button"  (click)="btnUserEditM()"
+  [@btnUserEdit]="btnUserEdit ? 'open': 'close'  ">
+  <div *ngIf="!btnUserEdit">
+    <div style="width: 100%; padding-top: 3px;  padding-right: 79px; z-index: 999px;">
+      <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+        style="color: #e2e6eb; border: none; background: bottom; ">
+        <i class="fas fa-user-plus "></i>
+      </button>
     </div>
-    <div style="margin-top: 2px;">
-        <i class="fas fa-plus"></i>
+    <div style="width: 100%; margin-top: -27px; margin-left: 11px; padding-top: 3px; margin-top: -32px;">
+      <button class="btn-primary" style="color: #e2e6eb; border: none; background: bottom;" (click)="btnUserDeleteM()">
+        <i class="fas fa-user-minus"></i>
+      </button>
     </div>
+  </div>
+  <div >
+    <i class="fas fa-plus" style="margin-top: 3px;"></i>
+  </div>
 </button>
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Kullanıcı Ekle</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" style="text-align: center;">
-        <input type="text"  [(ngModel)]="userInviteInput">
+        <input type="text" [(ngModel)]="userInviteInput">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button (click)="userAdded()" type="button" class="btn btn-primary" >Ekle</button>
+        <button (click)="userAdded()" type="button" class="btn btn-primary">Ekle</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="messageDiv" *ngIf="userMessageDiv">
+  <div class="row">
+    <div class="col-12" style="position: fixed; width: 100%; background-color: rgb(182, 169, 169); min-height: 100%;">
+      <textarea name="Sohbet" id="chatbox" disabled="true"  style="background-color: teal; position: fixed; width: 94%; height: 80%; margin-top: 4%; border: white 2px solid; border-radius: 4%;"></textarea>
+      <input type="text" [(ngModel)]="message"  placeholder="Mesajınızı girin.." style="position: fixed; top: 91%; width: 81%; left: 4%; border: white 5px solid; border-radius: 30px; font-size: 19px;">
+      <button  (click)="inputClick();userMessageSend()"  style="background-color: teal; position: fixed; top: 90.5%; right: 5px; border: white 1px solid; border-radius: 20px; height: 7%; width: 13%; text-align: -webkit-right; color: aliceblue;">
+        <i class="fas fa-paper-plane"></i>
+      </button>
     </div>
   </div>
 </div>
