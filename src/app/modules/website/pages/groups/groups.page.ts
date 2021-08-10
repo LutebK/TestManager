@@ -6,6 +6,7 @@ import { GroupsServiceService } from '../services/groups-service.service';
 import { isThisSecond } from 'date-fns';
 import { timeoutWith } from 'rxjs/operators';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'website-groups',
   animations:[
@@ -38,18 +39,22 @@ export class GroupsPage implements OnInit {
 
 
   btnUserEdit: boolean = true;
-  array: any[] = []
+
   inviteId: any[] = []
   userInviteInput: any;
   users: any[] = [];
   userPath: any = "";
   name: any = "";
   picture: any = "";
-
+  btnUserDelete:boolean = false;
+  userMessageDiv:boolean =false;
+  messageArray:any[]=[];
+  message:string;
+  id:any;
   constructor(private service: GroupsServiceService) { }
 
   ngOnInit(): void {
-    this.service.usersGetInfo().then(a => { a.subscribe(b => { b.forEach((c: any) => { this.users.push({ name: c.data().userName, img: c.data().imgName }) }) }) })
+    this.service.usersGetInfo().then(a => { a.subscribe(b => { b.forEach((c: any) => { this.users.push({ id:c.id , name: c.data().userName, img: c.data().imgName }) }) }) })
     console.log(this.service.userPath)
     console.log(this.users)
   }
@@ -69,7 +74,10 @@ export class GroupsPage implements OnInit {
           a.subscribe(a => {
             a.forEach(b => {
               this.userPath = b.ref.path.substring(6, 34), this.service.sendUserPath(b.ref.path.substring(6, 34)),
-              this.service.user().then(a => { a.subscribe((b: any) => { let user: GroupsInformation = { userName: b.data().name, imgName: b.data().picture }; this.service.usersAdded(user) }) })
+              this.service.user().then(a => { a.subscribe((b: any) => { let user: GroupsInformation = { userName: b.data().name, imgName: b.data().picture };
+              this.service.usersAdded(user);
+              this.users=[];
+              this.service.usersGetInfo().then(a => { a.subscribe(b => { b.forEach((c: any) => { this.users.push({ id:c.id , name: c.data().userName, img: c.data().imgName }) }) }) }) }) })
             })
           })
         }
@@ -77,10 +85,37 @@ export class GroupsPage implements OnInit {
       }
     });
   }
+  userDelete(id:any){
 
+    this.service.userDelete(id)
+    this.users = []
+    this.service.usersGetInfo().then(a => { a.subscribe(b => { b.forEach((c: any) => { this.users.push({ id:c.id , name: c.data().userName, img: c.data().imgName }) }) }) })
+  }
+  btnUserDeleteM(){
+    this.btnUserDelete = !this.btnUserDelete
+  }
+  userMessageDivActive(){
+    this.userMessageDiv = !this.userMessageDiv
+  }
 
   btnUserEditM() {
     this.btnUserEdit = !this.btnUserEdit;
+  }
+
+  inputClick(){
+    console.log(this.message)
+    document.getElementById("chatbox").append("kullanıcı: "+this.message+"\n")
+    console.log(this.message)
+  }
+
+  userMessageSendGetId(id:string){
+    this.id=id
+    console.log(this.id)
+  }
+  userMessageSend(){
+
+    this.messageArray.push(this.message)
+    this.service.userMessageSend(this.id,this.messageArray)
   }
 
 }
