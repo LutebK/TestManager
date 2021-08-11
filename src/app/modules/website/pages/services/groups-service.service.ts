@@ -8,6 +8,7 @@ import { resolveSanitizationFn } from '@angular/compiler/src/render3/view/templa
 import { environment } from 'src/environments/environment';
 import { tr } from 'date-fns/locale';
 import { MessageInformation } from 'src/app/models/message-information.model';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 
 
@@ -18,7 +19,7 @@ export class GroupsServiceService {
   getGroupsId: any = "";
   userPath: any = ""
   firebaseId: string = ""
-  constructor(private firestore: AngularFirestore, private aut: AngularFireAuth) {
+  constructor(private firestore: AngularFirestore, private aut: AngularFireAuth, private db: AngularFireDatabase) {
 
   }
 
@@ -28,6 +29,11 @@ export class GroupsServiceService {
 
   async sendUserPath(path:any){
     this.userPath=path
+  }
+  async rtdb(message:any,id:string){
+    console.log("id: "+id+"\n"+'kendiId:'+(await this.aut.currentUser).uid)
+    const userRef = this.db.database.ref("/users").on('child_added',async data=> console.log(data))
+    return userRef
   }
 
 

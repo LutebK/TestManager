@@ -7,6 +7,7 @@ import { isThisSecond } from 'date-fns';
 import { timeoutWith } from 'rxjs/operators';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Observable } from 'rxjs';
+import {AngularFireDatabase} from "@angular/fire/database"
 @Component({
   selector: 'website-groups',
   animations:[
@@ -57,6 +58,7 @@ export class GroupsPage implements OnInit {
     this.service.usersGetInfo().then(a => { a.subscribe(b => { b.forEach((c: any) => { this.users.push({ id:c.id , name: c.data().userName, img: c.data().imgName }) }) }) })
     console.log(this.service.userPath)
     console.log(this.users)
+
   }
 
   async getInviteCode() {
@@ -85,6 +87,11 @@ export class GroupsPage implements OnInit {
       }
     });
   }
+
+  async rtdbTs(){
+    return await this.service.rtdb(this.message,this.id)
+  }
+
   userDelete(id:any){
 
     this.service.userDelete(id)
