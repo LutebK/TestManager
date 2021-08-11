@@ -24,8 +24,7 @@ export class ProfilePage implements OnInit {
   uploadPercent: Observable<number>;
   downloadURL: any;
 
-  sArray: any[] = [];
-  sIdx: number = -1;
+  sArray: any[] = [];  
 
   constructor(private ps: ProfileServiceService, private storage: AngularFireStorage, private aut: AngularFireAuth) { }
 
@@ -65,7 +64,7 @@ export class ProfilePage implements OnInit {
     this.sArray = [];
     this.ps.getSavedQuestions().then(t => t.subscribe(s => { s.forEach(f => { this.sArray.push({ data: f.data(), id: f.id }) }) }));
   }
-
+ 
 
   async upload(event: any) {
     const file = event.target.files[0];

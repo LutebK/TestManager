@@ -13,7 +13,6 @@
 }
 
 .accordion-body {
-  
   background-color: #808080;
   color: white;
 }
@@ -66,7 +65,7 @@ p {
 .fa-square-root-alt {
   width: 20px;
   height: 20px;
-  font-style: normal;  
+  font-style: normal;
   font-size: 18px;
   line-height: 20px;
   align-items: center;
@@ -79,9 +78,10 @@ p {
   height: auto;
 }
 
-  .math-stats i, p {
+  .math-stats p {
     color: white;
     padding: 0;
+    margin-left: 3%;
   }
 
 .col-6 {

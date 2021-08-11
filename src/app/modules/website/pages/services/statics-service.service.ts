@@ -10,12 +10,11 @@ export class StaticsServiceService {
 
   constructor(private afs: AngularFirestore, private auth: AngularFireAuth) { }
 
-  getStats(data: StatsDocument) {
-    return data;
+  async addStats(data: StatsDocument) {
+    this.afs.collection("users/" + (await this.auth.currentUser).uid + "/stats/").add(data);
   }
 
-  async getStat() {
-    return await this.afs.collection("users/" + (await this.auth.currentUser).uid + "/stats/").valueChanges();
+  async getStats() {
+    return await this.afs.collection("users/" + (await this.auth.currentUser).uid + "/stats/").get();
   }
-
 }
